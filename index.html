@@ -3,114 +3,314 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limassou Haman Bello — Developer Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Limassou Haman Bello</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a0a0f;
-  --surface:#13131a;
-  --card:#1a1a24;
-  --border:#2a2a3a;
-  --text:#e8e8f0;
-  --muted:#8888aa;
-  --accent:#6c63ff;
-  --accent2:#00d4aa;
-  --accent3:#ff6b6b;
-  --font:'Space Grotesk',sans-serif;
-  --mono:'Space Mono',monospace;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1a1814;
+  --ink2: #4a4640;
+  --ink3: #9a9590;
+  --paper: #faf9f7;
+  --paper2: #f2f0ec;
+  --paper3: #e8e5df;
+  --line: #e0dcd5;
+  --pop: #c85a2a;
+  --pop-light: #fdf0ea;
+  --mono: 'Courier New', monospace;
 }
-body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;overflow-x:hidden}
-a{color:var(--accent2);text-decoration:none}
-a:hover{text-decoration:underline}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
-.nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-family:var(--mono);font-size:14px;color:var(--accent2);letter-spacing:0.05em}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-size:13px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;transition:color 0.2s}
-.nav-links a:hover{color:var(--text)}
+html { scroll-behavior: smooth; }
 
-/* HERO */
-.hero{max-width:900px;margin:0 auto;padding:5rem 2rem 4rem}
-.hero-eyebrow{font-family:var(--mono);font-size:12px;color:var(--accent2);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:8px}
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent2)}
-.hero-name{font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.5rem}
-.hero-name span{color:var(--accent)}
-.hero-title{font-size:clamp(1rem,2.5vw,1.4rem);color:var(--muted);font-weight:400;margin-bottom:1.5rem}
-.hero-bio{font-size:16px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:2.5rem}
-.hero-bio strong{color:var(--text)}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none}
-.btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent)}
-.btn-primary:hover{background:#5a52e0;text-decoration:none}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
-.btn-ghost:hover{border-color:var(--muted);text-decoration:none}
-.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border)}
-.stat-num{font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--text)}
-.stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* SECTIONS */
-section{max-width:900px;margin:0 auto;padding:4rem 2rem}
-.section-eyebrow{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem}
-.section-title{font-size:1.8rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.5rem}
-.section-sub{color:var(--muted);font-size:15px;margin-bottom:3rem}
-.divider{border:none;border-top:1px solid var(--border);max-width:900px;margin:0 auto}
+a { color: inherit; text-decoration: none; }
 
-/* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color 0.2s,transform 0.2s;cursor:pointer;position:relative;overflow:hidden}
-.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
-.project-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.project-card:hover::before{transform:scaleX(1)}
-.project-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:0.75rem}
-.project-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.project-links{display:flex;gap:8px}
-.project-link{color:var(--muted);font-size:12px;text-decoration:none;padding:4px 8px;border:1px solid var(--border);border-radius:4px;transition:all 0.2s}
-.project-link:hover{color:var(--text);border-color:var(--muted);text-decoration:none}
-.project-name{font-size:15px;font-weight:600;margin-bottom:0.4rem;color:var(--text)}
-.project-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
-.project-tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:4px;border:1px solid var(--border);color:var(--muted);background:var(--surface)}
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 max(2rem, calc(50vw - 420px));
+}
+.nav-row {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
+}
+.nav-mark {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.nav-mark em { font-style: italic; color: var(--pop); }
+.nav-links { display: flex; gap: 1.75rem; }
+.nav-links a {
+  font-size: 13px; color: var(--ink3);
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--ink); }
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
-.skill-group{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem}
-.skill-group-name{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent2);margin-bottom:0.75rem}
-.skill-list{display:flex;flex-direction:column;gap:6px}
-.skill-item{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
-.skill-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--border);flex-shrink:0}
+/* ── WRAPPER ── */
+.wrap { max-width: 840px; margin: 0 auto; padding: 0 2rem; }
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-@media(max-width:600px){.about-grid{grid-template-columns:1fr}}
-.about-text p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:1rem}
-.about-text strong{color:var(--text)}
-.info-list{display:flex;flex-direction:column;gap:0.75rem}
-.info-item{display:flex;gap:1rem;font-size:14px}
-.info-label{color:var(--muted);min-width:80px;flex-shrink:0;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;padding-top:1px}
-.info-val{color:var(--text)}
+/* ── HERO ── */
+.hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--line); }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-family: var(--mono);
+  color: var(--pop); letter-spacing: 0.08em;
+  margin-bottom: 2rem;
+}
+.hero-kicker::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--pop);
+}
+h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+h1 em {
+  font-style: italic;
+  color: var(--pop);
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--ink2);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+.hero-sub strong { color: var(--ink); font-weight: 500; }
+.cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 20px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.15s; cursor: pointer;
+}
+.btn-solid {
+  background: var(--ink); color: var(--paper);
+  border: 1px solid var(--ink);
+}
+.btn-solid:hover { background: var(--ink2); border-color: var(--ink2); }
+.btn-line {
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-line:hover { border-color: var(--ink3); }
+.hero-counters {
+  display: flex; gap: 3rem;
+  margin-top: 4rem; padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+.counter-n {
+  font-family: 'Lora', serif;
+  font-size: 2rem; font-weight: 600;
+  color: var(--ink); line-height: 1;
+}
+.counter-n sup { font-size: 1rem; color: var(--pop); }
+.counter-l {
+  margin-top: 4px; font-size: 12px;
+  font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
-/* CONTACT */
-.contact-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;text-align:center}
-.contact-card h3{font-size:1.4rem;font-weight:700;margin-bottom:0.5rem}
-.contact-card p{color:var(--muted);font-size:15px;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}
-.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+/* ── SECTION HEADER ── */
+.sec { padding: 5rem 0; border-bottom: 1px solid var(--line); }
+.sec-head { margin-bottom: 3rem; }
+.sec-label {
+  font-size: 11px; font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 0.5rem;
+}
+h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600; letter-spacing: -0.015em;
+  color: var(--ink);
+}
 
-/* FOOTER */
-footer{text-align:center;padding:2rem;font-size:12px;color:var(--muted);border-top:1px solid var(--border)}
+/* ── PROJECTS ── */
+.projects { display: flex; flex-direction: column; gap: 0; }
+.project {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 0 1.25rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  transition: background 0.15s;
+}
+.project:last-child { border-bottom: 1px solid var(--line); }
+.project:hover { background: var(--paper2); margin: 0 -1rem; padding: 1.5rem 1rem; }
+.proj-num {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--ink3);
+  padding-top: 3px; letter-spacing: 0.04em;
+}
+.proj-body {}
+.proj-name {
+  font-size: 15px; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
+  display: flex; align-items: center; gap: 8px;
+}
+.proj-fork {
+  font-size: 10px; font-family: var(--mono);
+  color: var(--ink3); padding: 1px 6px;
+  border: 1px solid var(--line); border-radius: 3px;
+  font-weight: 400;
+}
+.proj-desc {
+  font-size: 13px; color: var(--ink2);
+  line-height: 1.6; margin-bottom: 10px;
+  max-width: 520px;
+}
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.proj-tag {
+  font-size: 11px; font-family: var(--mono);
+  color: var(--ink3); padding: 2px 7px;
+  background: var(--paper2);
+  border: 1px solid var(--line); border-radius: 3px;
+}
+.proj-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 2px; }
+.proj-link {
+  font-size: 12px; color: var(--ink3);
+  display: flex; align-items: center; gap: 4px;
+  transition: color 0.15s;
+}
+.proj-link:hover { color: var(--pop); }
+.proj-live {
+  font-size: 12px; color: var(--pop);
+  font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
 
-/* CURSOR ACCENT */
-.accent-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent2);margin-left:2px;vertical-align:middle;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+/* ── SKILLS ── */
+.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+@media(max-width:560px){ .skills-layout { grid-template-columns: 1fr; } }
+.skill-col h3 {
+  font-size: 12px; font-family: var(--mono);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink3); margin-bottom: 1rem;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--line);
+}
+.skill-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 6px 0;
+  border-bottom: 1px solid var(--paper3);
+  font-size: 14px;
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-name { color: var(--ink2); }
+.skill-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--pop); opacity: 0.4;
+  flex-shrink: 0;
+}
+.skill-dot.hi { opacity: 1; }
+.skill-dot.md { opacity: 0.65; }
+
+/* ── ABOUT ── */
+.about-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+@media(max-width:600px){ .about-layout { grid-template-columns: 1fr; gap: 2rem; } }
+.about-text p { color: var(--ink2); margin-bottom: 1rem; font-size: 15px; line-height: 1.8; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-text strong { color: var(--ink); font-weight: 500; }
+.about-text a { color: var(--pop); border-bottom: 1px solid var(--pop-light); }
+.about-text a:hover { border-color: var(--pop); }
+.about-info { display: flex; flex-direction: column; gap: 0; }
+.info-row {
+  display: flex; flex-direction: column;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.info-row:first-child { border-top: 1px solid var(--line); }
+.info-k {
+  font-size: 10px; font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 2px;
+}
+.info-v { font-size: 13px; color: var(--ink); }
+.info-v a { color: var(--pop); }
+.status-dot {
+  display: inline-block; width: 7px; height: 7px;
+  border-radius: 50%; background: #2d9e6b;
+  margin-right: 5px; vertical-align: middle;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+/* ── CONTACT ── */
+.contact-block {
+  background: var(--ink); color: var(--paper);
+  border-radius: 8px; padding: 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.contact-copy h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem; font-weight: 600;
+  margin-bottom: 0.4rem; color: var(--paper);
+}
+.contact-copy p { font-size: 14px; color: #9a9590; max-width: 340px; }
+.contact-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; flex-shrink: 0; }
+.btn-inv {
+  background: transparent; color: var(--paper);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 9px 18px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  transition: border-color 0.15s; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-inv:hover { border-color: rgba(255,255,255,0.5); }
+.btn-inv-pop {
+  background: var(--pop); color: #fff;
+  border: 1px solid var(--pop);
+  padding: 9px 18px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  transition: opacity 0.15s; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-inv-pop:hover { opacity: 0.88; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 2.5rem 2rem; text-align: center;
+  font-size: 12px; font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.04em;
+}
+
+@media(max-width:640px){
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero-counters { gap: 2rem; }
+  .project { grid-template-columns: 40px 1fr; }
+  .proj-links { display: none; }
+  .contact-block { flex-direction: column; padding: 2rem; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-inner">
-    <span class="nav-logo">LHB.dev</span>
+  <div class="nav-row">
+    <span class="nav-mark">L. Haman <em>Bello</em></span>
     <div class="nav-links">
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -120,266 +320,238 @@ footer{text-align:center;padding:2rem;font-size:12px;color:var(--muted);border-t
   </div>
 </nav>
 
-<div class="hero">
-  <div class="hero-eyebrow">Available for opportunities</div>
-  <h1 class="hero-name">Limassou<br><span>Haman Bello</span></h1>
-  <p class="hero-title">Intermediate Developer · Robotics & AI Enthusiast</p>
-  <p class="hero-bio">
-    I'm a <strong>CSE student at IUT Bangladesh</strong> who builds full-stack applications, embedded systems, and AI-powered tools. I love working across the stack — from writing Python scripts to crafting React UIs and programming Arduino devices.
-  </p>
-  <div class="hero-ctas">
-    <a class="btn btn-primary" href="https://github.com/01329582993" target="_blank">View GitHub</a>
-    <a class="btn btn-ghost" href="#contact">Get in touch</a>
-    <a class="btn btn-ghost" href="https://lima-chat.vercel.app/" target="_blank">See LimaChat ↗</a>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-kicker">Open to work</div>
+    <h1>Building software<br>that <em>actually works.</em></h1>
+    <p class="hero-sub">
+      I'm a <strong>full-stack developer and CSE student at IUT Bangladesh</strong> with a thing for clean code, embedded systems, and products people enjoy using. I work across React, TypeScript, Java, Python, and C++.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="https://github.com/01329582993" target="_blank">GitHub &rarr;</a>
+      <a class="btn btn-line" href="https://lima-chat.vercel.app/" target="_blank">See LimaChat live</a>
+      <a class="btn btn-line" href="#contact">Get in touch</a>
+    </div>
+    <div class="hero-counters">
+      <div>
+        <div class="counter-n">46<sup>+</sup></div>
+        <div class="counter-l">Repositories</div>
+      </div>
+      <div>
+        <div class="counter-n">311</div>
+        <div class="counter-l">Contributions</div>
+      </div>
+      <div>
+        <div class="counter-n">6<sup>+</sup></div>
+        <div class="counter-l">Languages</div>
+      </div>
+      <div>
+        <div class="counter-n">3<sup>+</sup></div>
+        <div class="counter-l">Years building</div>
+      </div>
+    </div>
   </div>
-  <div class="hero-stats">
-    <div>
-      <div class="stat-num">45+</div>
-      <div class="stat-label">Repositories</div>
+
+  <!-- PROJECTS -->
+  <div class="sec" id="projects">
+    <div class="sec-head">
+      <div class="sec-label">Selected work</div>
+      <h2>Things I've built</h2>
     </div>
-    <div>
-      <div class="stat-num">307</div>
-      <div class="stat-label">Contributions</div>
-    </div>
-    <div>
-      <div class="stat-num">3+</div>
-      <div class="stat-label">Years coding</div>
-    </div>
-    <div>
-      <div class="stat-num">6+</div>
-      <div class="stat-label">Languages</div>
+
+    <div class="projects">
+
+      <div class="project">
+        <div class="proj-num">01</div>
+        <div class="proj-body">
+          <div class="proj-name">LimaChat</div>
+          <div class="proj-desc">An AI-powered conversational form builder — users answer questions in a chat interface and responses land in a dashboard. Built with TypeScript and deployed to production.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">TypeScript</span>
+            <span class="proj-tag">Next.js</span>
+            <span class="proj-tag">AI</span>
+            <span class="proj-tag">Full-stack</span>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-live" href="https://lima-chat.vercel.app/" target="_blank">Live ↗</a>
+          <a class="proj-link" href="https://github.com/01329582993/LimaChat" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="proj-num">02</div>
+        <div class="proj-body">
+          <div class="proj-name">UgraMarket</div>
+          <div class="proj-desc">A marketplace application built with TypeScript. Covers product listings, user flows, and real-world e-commerce patterns.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">TypeScript</span>
+            <span class="proj-tag">Web app</span>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/UgraMarket" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="proj-num">03</div>
+        <div class="proj-body">
+          <div class="proj-name">
+            Weavora
+            <span class="proj-fork">fork</span>
+          </div>
+          <div class="proj-desc">Contributed to Weavora, an open-source TypeScript project. Involves reading unfamiliar codebases, making meaningful contributions, and working within an existing architecture.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">TypeScript</span>
+            <span class="proj-tag">Open source</span>
+            <span class="proj-tag">Collaboration</span>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/Weavora" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="proj-num">04</div>
+        <div class="proj-body">
+          <div class="proj-name">IUSER_ROUTER_MANAGER</div>
+          <div class="proj-desc">A user and router management system — backend logic, user roles, and routing. Demonstrates understanding of system architecture and access control patterns.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Systems</span>
+            <span class="proj-tag">Backend</span>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/IUSER_ROUTER_MANAGER" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="proj-num">05</div>
+        <div class="proj-body">
+          <div class="proj-name">panitech</div>
+          <div class="proj-desc">A Java-based project built at IUT. Covers object-oriented design and backend development patterns in a real academic setting.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Java</span>
+            <span class="proj-tag">OOP</span>
+            <span class="proj-tag">Backend</span>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/panitech" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="proj-num">06</div>
+        <div class="proj-body">
+          <div class="proj-name">Pong Game in C++</div>
+          <div class="proj-desc">Classic Pong implemented from scratch in C++. Game loop, collision detection, rendering — built without an engine, just the language.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">C++</span>
+            <span class="proj-tag">Game dev</span>
+            <span class="proj-tag">Systems</span>
+          </div>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/Pong_Game_with_CPlus" target="_blank">Code</a>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <!-- SKILLS -->
+  <div class="sec" id="skills">
+    <div class="sec-head">
+      <div class="sec-label">Capabilities</div>
+      <h2>What I work with</h2>
+    </div>
+    <div class="skills-layout">
+      <div class="skill-col">
+        <h3>Languages</h3>
+        <div class="skill-row"><span class="skill-name">TypeScript / JavaScript</span><span class="skill-dot hi"></span></div>
+        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-dot hi"></span></div>
+        <div class="skill-row"><span class="skill-name">Java</span><span class="skill-dot md"></span></div>
+        <div class="skill-row"><span class="skill-name">C / C++</span><span class="skill-dot md"></span></div>
+        <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-dot hi"></span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Frameworks & tools</h3>
+        <div class="skill-row"><span class="skill-name">React / Next.js</span><span class="skill-dot hi"></span></div>
+        <div class="skill-row"><span class="skill-name">Node.js</span><span class="skill-dot md"></span></div>
+        <div class="skill-row"><span class="skill-name">Git / GitHub</span><span class="skill-dot hi"></span></div>
+        <div class="skill-row"><span class="skill-name">Arduino / Embedded</span><span class="skill-dot md"></span></div>
+        <div class="skill-row"><span class="skill-name">Vercel / Deployment</span><span class="skill-dot hi"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="sec" id="about">
+    <div class="sec-head">
+      <div class="sec-label">Background</div>
+      <h2>A bit about me</h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-text">
+        <p>I'm Limassou — a developer based in Bangladesh, currently studying Computer Science and Engineering at <strong>IUT</strong>. I've been writing code for a few years now, and the thing that keeps me going is the gap between an idea and something that actually runs.</p>
+        <p>My work spans the full stack: I've shipped a <strong>live TypeScript product</strong> (LimaChat), built backend systems in Java, written game logic in C++, and programmed Arduino devices from scratch. I'm comfortable moving between layers.</p>
+        <p>I've contributed to <strong>28+ repositories</strong> this year, including team projects and open-source work. I tend to write more commits than I do issues — 92% of my activity is code.</p>
+        <p>Outside of code, I'm interested in robotics, AI systems, and how software interacts with the physical world. I have an <a href="https://orcid.org/0009-0008-6619-529X" target="_blank">ORCID profile</a> for academic work.</p>
+      </div>
+      <div class="about-info">
+        <div class="info-row">
+          <span class="info-k">Location</span>
+          <span class="info-v">Bangladesh</span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Education</span>
+          <span class="info-v">CSE, IUT</span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Focus</span>
+          <span class="info-v">Full-stack & Systems</span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">GitHub</span>
+          <span class="info-v"><a href="https://github.com/01329582993" target="_blank">01329582993</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Live project</span>
+          <span class="info-v"><a href="https://lima-chat.vercel.app/" target="_blank">lima-chat.vercel.app</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Status</span>
+          <span class="info-v"><span class="status-dot"></span>Open to work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="sec" id="contact" style="border-bottom:none">
+    <div class="contact-block">
+      <div class="contact-copy">
+        <h3>Let's talk.</h3>
+        <p>I'm looking for an intermediate developer role. If something I've built caught your eye, reach out — I reply fast.</p>
+      </div>
+      <div class="contact-btns">
+        <a class="btn-inv-pop" href="https://github.com/01329582993" target="_blank">GitHub &rarr;</a>
+        <a class="btn-inv" href="https://wa.me/8801329582993" target="_blank">WhatsApp</a>
+        <a class="btn-inv" href="https://lima-chat.vercel.app/" target="_blank">LimaChat</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<hr class="divider">
-
-<section id="projects">
-  <div class="section-eyebrow">Work</div>
-  <h2 class="section-title">Featured projects</h2>
-  <p class="section-sub">A selection of personal and academic projects across web, systems, and AI.</p>
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:#1a1a2e">💬</div>
-        <div class="project-links">
-          <a class="project-link" href="https://lima-chat.vercel.app/" target="_blank">Live ↗</a>
-          <a class="project-link" href="https://github.com/01329582993" target="_blank">Code</a>
-        </div>
-      </div>
-      <div class="project-name">LimaChat</div>
-      <div class="project-desc">A full-stack real-time chat application built with Next.js. Demonstrates web sockets, auth, and modern UI design deployed on Vercel.</div>
-      <div class="project-tags">
-        <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Vercel</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:#1a2a1a">🚀</div>
-        <div class="project-links">
-          <a class="project-link" href="https://github.com/01329582993/SpaceMissionSys" target="_blank">Code</a>
-        </div>
-      </div>
-      <div class="project-name">Space Mission System</div>
-      <div class="project-desc">Simulation and management system for space missions. Covers object-oriented design, data modeling, and systems-level thinking.</div>
-      <div class="project-tags">
-        <span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Systems</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:#2a1a1a">🔔</div>
-        <div class="project-links">
-          <a class="project-link" href="https://github.com/Madina220041162/WebAlarm" target="_blank">Code</a>
-        </div>
-      </div>
-      <div class="project-name">WebAlarm</div>
-      <div class="project-desc">A collaborative web-based alarm and notification system. Built as part of a team project using modern web technologies.</div>
-      <div class="project-tags">
-        <span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:#1a1a2a">✅</div>
-        <div class="project-links">
-          <a class="project-link" href="https://github.com/01329582993/TodoList" target="_blank">Code</a>
-        </div>
-      </div>
-      <div class="project-name">TodoList</div>
-      <div class="project-desc">A clean, functional task management application — a classic app built with attention to UX, state management, and clean code practices.</div>
-      <div class="project-tags">
-        <span class="tag">JavaScript</span><span class="tag">React</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:#1a2a2a">🤖</div>
-        <div class="project-links">
-          <a class="project-link" href="https://github.com/01329582993/All_Arduino" target="_blank">Code</a>
-        </div>
-      </div>
-      <div class="project-name">All Arduino</div>
-      <div class="project-desc">A collection of Arduino and embedded systems projects — sensors, actuators, and control logic. Reflects a passion for hardware and robotics.</div>
-      <div class="project-tags">
-        <span class="tag">C++</span><span class="tag">Arduino</span><span class="tag">Embedded</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:#2a1a2a">🧮</div>
-        <div class="project-links">
-          <a class="project-link" href="https://github.com/01329582993/Algorithms-CSE-4404" target="_blank">Code</a>
-        </div>
-      </div>
-      <div class="project-name">Algorithms CSE-4404</div>
-      <div class="project-desc">Academic coursework covering fundamental algorithms — sorting, searching, graph theory, and complexity analysis — implemented in C++.</div>
-      <div class="project-tags">
-        <span class="tag">C++</span><span class="tag">Algorithms</span><span class="tag">DSA</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider">
-
-<section id="skills">
-  <div class="section-eyebrow">Capabilities</div>
-  <h2 class="section-title">Skills & tools</h2>
-  <p class="section-sub">Languages, frameworks, and technologies I work with regularly.</p>
-  <div class="skills-grid">
-
-    <div class="skill-group">
-      <div class="skill-group-name">Frontend</div>
-      <div class="skill-list">
-        <div class="skill-item">React / Next.js</div>
-        <div class="skill-item">JavaScript (ES6+)</div>
-        <div class="skill-item">HTML5 / CSS3</div>
-        <div class="skill-item">Responsive design</div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-name">Backend</div>
-      <div class="skill-list">
-        <div class="skill-item">Python</div>
-        <div class="skill-item">Java / Spring</div>
-        <div class="skill-item">REST APIs</div>
-        <div class="skill-item">Node.js</div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-name">Systems</div>
-      <div class="skill-list">
-        <div class="skill-item">C / C++</div>
-        <div class="skill-item">Arduino / IoT</div>
-        <div class="skill-item">Embedded systems</div>
-        <div class="skill-item">Robotics</div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-name">Tools</div>
-      <div class="skill-list">
-        <div class="skill-item">Git / GitHub</div>
-        <div class="skill-item">Vercel / Deploy</div>
-        <div class="skill-item">VS Code</div>
-        <div class="skill-item">Linux</div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-name">AI / Data</div>
-      <div class="skill-list">
-        <div class="skill-item">Python ML libs</div>
-        <div class="skill-item">Data structures</div>
-        <div class="skill-item">Algorithm design</div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-name">Soft skills</div>
-      <div class="skill-list">
-        <div class="skill-item">Team collaboration</div>
-        <div class="skill-item">Problem solving</div>
-        <div class="skill-item">Fast learner</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider">
-
-<section id="about">
-  <div class="section-eyebrow">About</div>
-  <h2 class="section-title">Who I am</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>I'm <strong>Limassou Haman Bello</strong>, a Computer Science & Engineering student at <strong>IUT Bangladesh</strong> with a deep passion for building things that matter — from web applications to robotic systems.</p>
-      <p>My background spans full-stack web development, embedded systems, and algorithm design. I've contributed to <strong>27+ repositories</strong> including team projects and open-source work, and I founded <strong>LimaChat</strong>, a real-time chat platform live on Vercel.</p>
-      <p>I thrive at the intersection of software and hardware — as comfortable writing a React component as I am programming an Arduino microcontroller. I'm actively looking for an intermediate developer role where I can keep growing and ship meaningful products.</p>
-    </div>
-    <div>
-      <div class="info-list">
-        <div class="info-item">
-          <span class="info-label">Location</span>
-          <span class="info-val">Bangladesh</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Education</span>
-          <span class="info-val">CSE @ IUT</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Focus</span>
-          <span class="info-val">Full-stack & Robotics/AI</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">GitHub</span>
-          <span class="info-val"><a href="https://github.com/01329582993" target="_blank">01329582993</a></span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">ORCID</span>
-          <span class="info-val"><a href="https://orcid.org/0009-0008-6619-529X" target="_blank">0009-0008-6619-529X</a></span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Project</span>
-          <span class="info-val"><a href="https://lima-chat.vercel.app/" target="_blank">lima-chat.vercel.app</a></span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Status</span>
-          <span class="info-val" style="color:#00d4aa">Open to work <span class="accent-dot"></span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<section id="contact">
-  <div class="contact-card">
-    <h3>Let's build something together</h3>
-    <p>I'm actively looking for intermediate developer roles. If you have a position that fits, I'd love to hear from you.</p>
-    <div class="contact-links">
-      <a class="btn btn-primary" href="https://github.com/01329582993" target="_blank">GitHub</a>
-      <a class="btn btn-ghost" href="https://wa.me/8801329582993" target="_blank">WhatsApp</a>
-      <a class="btn btn-ghost" href="https://lima-chat.vercel.app/" target="_blank">LimaChat</a>
-      <a class="btn btn-ghost" href="https://sites.google.com/iut-dhaka.edu/b/ankapp/home" target="_blank">IUT Page</a>
-    </div>
-  </div>
-</section>
-
 <footer>
-  Built with care · Limassou Haman Bello · 2026
+  Limassou Haman Bello &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Built by hand
 </footer>
 
 </body>
