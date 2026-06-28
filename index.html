@@ -6,152 +6,303 @@
 <title>Limassou Haman Bello</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#1a1814;--ink2:#4a4640;--ink3:#9a9590;
-  --paper:#faf9f7;--paper2:#f2f0ec;--paper3:#e8e5df;
-  --line:#e0dcd5;--pop:#c85a2a;--pop-light:#fdf0ea;
-  --mono:'Courier New',monospace;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1a1814;
+  --ink2: #4a4640;
+  --ink3: #9a9590;
+  --paper: #faf9f7;
+  --paper2: #f2f0ec;
+  --paper3: #e8e5df;
+  --line: #e0dcd5;
+  --pop: #c85a2a;
+  --pop-light: #fdf0ea;
+  --mono: 'Courier New', monospace;
 }
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:50;background:rgba(250,249,247,0.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:0 max(2rem,calc(50vw - 420px))}
-.nav-row{display:flex;align-items:center;justify-content:space-between;height:52px}
-.nav-mark{font-family:'Lora',serif;font-size:15px;color:var(--ink)}
-.nav-mark em{font-style:italic;color:var(--pop)}
-.nav-right{display:flex;align-items:center;gap:1.75rem}
-.nav-links{display:flex;gap:1.75rem}
-.nav-links a{font-size:13px;color:var(--ink3);letter-spacing:0.04em;transition:color 0.15s}
-.nav-links a:hover{color:var(--ink)}
+html { scroll-behavior: smooth; }
 
-/* LANG SWITCHER */
-.lang-switcher{position:relative}
-.lang-btn{
-  display:flex;align-items:center;gap:5px;
-  font-size:12px;font-family:var(--mono);
-  color:var(--ink3);letter-spacing:0.05em;
-  background:var(--paper2);border:1px solid var(--line);
-  border-radius:4px;padding:4px 9px;cursor:pointer;
-  transition:all 0.15s;user-select:none;
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
-.lang-btn:hover{border-color:var(--ink3);color:var(--ink)}
-.lang-btn .arrow{font-size:9px;transition:transform 0.2s}
-.lang-btn.open .arrow{transform:rotate(180deg)}
-.lang-dropdown{
-  position:absolute;right:0;top:calc(100% + 6px);
-  background:var(--paper);border:1px solid var(--line);
-  border-radius:6px;padding:4px;
-  min-width:170px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.08);
-  display:none;z-index:100;
+
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 max(2rem, calc(50vw - 420px));
 }
-.lang-dropdown.open{display:block}
-.lang-option{
-  display:flex;align-items:center;gap:10px;
-  padding:7px 10px;border-radius:4px;cursor:pointer;
-  font-size:13px;color:var(--ink2);transition:background 0.12s;
+.nav-row {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
 }
-.lang-option:hover{background:var(--paper2)}
-.lang-option.active{color:var(--pop);font-weight:500}
-.lang-flag{font-size:16px;line-height:1}
-.lang-name{flex:1}
-.lang-code{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+.nav-mark {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.nav-mark em { font-style: italic; color: var(--pop); }
+.nav-links { display: flex; gap: 1.75rem; }
+.nav-links a {
+  font-size: 13px; color: var(--ink3);
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--ink); }
 
-/* WRAP */
-.wrap{max-width:840px;margin:0 auto;padding:0 2rem}
+/* ── WRAPPER ── */
+.wrap { max-width: 840px; margin: 0 auto; padding: 0 2rem; }
 
-/* HERO */
-.hero{padding:6rem 0 5rem;border-bottom:1px solid var(--line)}
-.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-family:var(--mono);color:var(--pop);letter-spacing:0.08em;margin-bottom:2rem}
-.hero-kicker::before{content:'';display:block;width:28px;height:1px;background:var(--pop)}
-h1{font-family:'Lora',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:600;line-height:1.08;letter-spacing:-0.02em;margin-bottom:1.5rem}
-h1 em{font-style:italic;color:var(--pop)}
-.hero-sub{font-size:17px;color:var(--ink2);max-width:520px;line-height:1.75;margin-bottom:2.5rem}
-.hero-sub strong{color:var(--ink);font-weight:500}
-.cta-row{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:0.02em;transition:all 0.15s;cursor:pointer}
-.btn-solid{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
-.btn-solid:hover{background:var(--ink2);border-color:var(--ink2)}
-.btn-line{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.btn-line:hover{border-color:var(--ink3)}
-.hero-counters{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--line)}
-.counter-n{font-family:'Lora',serif;font-size:2rem;font-weight:600;line-height:1}
-.counter-n sup{font-size:1rem;color:var(--pop)}
-.counter-l{margin-top:4px;font-size:12px;font-family:var(--mono);color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase}
+/* ── HERO ── */
+.hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--line); }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-family: var(--mono);
+  color: var(--pop); letter-spacing: 0.08em;
+  margin-bottom: 2rem;
+}
+.hero-kicker::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--pop);
+}
+h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+h1 em {
+  font-style: italic;
+  color: var(--pop);
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--ink2);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+.hero-sub strong { color: var(--ink); font-weight: 500; }
+.cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 20px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.15s; cursor: pointer;
+}
+.btn-solid {
+  background: var(--ink); color: var(--paper);
+  border: 1px solid var(--ink);
+}
+.btn-solid:hover { background: var(--ink2); border-color: var(--ink2); }
+.btn-line {
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-line:hover { border-color: var(--ink3); }
+.hero-counters {
+  display: flex; gap: 3rem;
+  margin-top: 4rem; padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+.counter-n {
+  font-family: 'Lora', serif;
+  font-size: 2rem; font-weight: 600;
+  color: var(--ink); line-height: 1;
+}
+.counter-n sup { font-size: 1rem; color: var(--pop); }
+.counter-l {
+  margin-top: 4px; font-size: 12px;
+  font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
-/* SECTION */
-.sec{padding:5rem 0;border-bottom:1px solid var(--line)}
-.sec-head{margin-bottom:3rem}
-.sec-label{font-size:11px;font-family:var(--mono);color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem}
-h2{font-family:'Lora',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:600;letter-spacing:-0.015em}
+/* ── SECTION HEADER ── */
+.sec { padding: 5rem 0; border-bottom: 1px solid var(--line); }
+.sec-head { margin-bottom: 3rem; }
+.sec-label {
+  font-size: 11px; font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 0.5rem;
+}
+h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600; letter-spacing: -0.015em;
+  color: var(--ink);
+}
 
-/* PROJECTS */
-.projects{display:flex;flex-direction:column}
-.project{display:grid;grid-template-columns:56px 1fr auto;gap:0 1.25rem;align-items:start;padding:1.5rem 0;border-top:1px solid var(--line);transition:background 0.15s}
-.project:last-child{border-bottom:1px solid var(--line)}
-.project:hover{background:var(--paper2);margin:0 -1rem;padding:1.5rem 1rem}
-.proj-num{font-family:var(--mono);font-size:11px;color:var(--ink3);padding-top:3px}
-.proj-name{font-size:15px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.proj-fork{font-size:10px;font-family:var(--mono);color:var(--ink3);padding:1px 6px;border:1px solid var(--line);border-radius:3px;font-weight:400}
-.proj-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:10px;max-width:520px}
-.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
-.proj-tag{font-size:11px;font-family:var(--mono);color:var(--ink3);padding:2px 7px;background:var(--paper2);border:1px solid var(--line);border-radius:3px}
-.proj-links{display:flex;flex-direction:column;gap:6px;align-items:flex-end;padding-top:2px}
-.proj-link{font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:4px;transition:color 0.15s}
-.proj-link:hover{color:var(--pop)}
-.proj-live{font-size:12px;color:var(--pop);font-weight:500}
+/* ── PROJECTS ── */
+.projects { display: flex; flex-direction: column; gap: 0; }
+.project {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 0 1.25rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  transition: background 0.15s;
+}
+.project:last-child { border-bottom: 1px solid var(--line); }
+.project:hover { background: var(--paper2); margin: 0 -1rem; padding: 1.5rem 1rem; }
+.proj-num {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--ink3);
+  padding-top: 3px; letter-spacing: 0.04em;
+}
+.proj-body {}
+.proj-name {
+  font-size: 15px; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
+  display: flex; align-items: center; gap: 8px;
+}
+.proj-fork {
+  font-size: 10px; font-family: var(--mono);
+  color: var(--ink3); padding: 1px 6px;
+  border: 1px solid var(--line); border-radius: 3px;
+  font-weight: 400;
+}
+.proj-desc {
+  font-size: 13px; color: var(--ink2);
+  line-height: 1.6; margin-bottom: 10px;
+  max-width: 520px;
+}
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.proj-tag {
+  font-size: 11px; font-family: var(--mono);
+  color: var(--ink3); padding: 2px 7px;
+  background: var(--paper2);
+  border: 1px solid var(--line); border-radius: 3px;
+}
+.proj-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 2px; }
+.proj-link {
+  font-size: 12px; color: var(--ink3);
+  display: flex; align-items: center; gap: 4px;
+  transition: color 0.15s;
+}
+.proj-link:hover { color: var(--pop); }
+.proj-live {
+  font-size: 12px; color: var(--pop);
+  font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
 
-/* SKILLS */
-.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-@media(max-width:560px){.skills-layout{grid-template-columns:1fr}}
-.skill-col h3{font-size:12px;font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--line)}
-.skill-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--paper3);font-size:14px}
-.skill-row:last-child{border-bottom:none}
-.skill-name{color:var(--ink2)}
-.skill-dot{width:6px;height:6px;border-radius:50%;background:var(--pop);flex-shrink:0}
-.skill-dot.hi{opacity:1}
-.skill-dot.md{opacity:0.55}
-.skill-dot.lo{opacity:0.25}
+/* ── SKILLS ── */
+.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+@media(max-width:560px){ .skills-layout { grid-template-columns: 1fr; } }
+.skill-col h3 {
+  font-size: 12px; font-family: var(--mono);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink3); margin-bottom: 1rem;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--line);
+}
+.skill-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 6px 0;
+  border-bottom: 1px solid var(--paper3);
+  font-size: 14px;
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-name { color: var(--ink2); }
+.skill-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--pop); opacity: 0.4;
+  flex-shrink: 0;
+}
+.skill-dot.hi { opacity: 1; }
+.skill-dot.md { opacity: 0.65; }
 
-/* ABOUT */
-.about-layout{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start}
-@media(max-width:600px){.about-layout{grid-template-columns:1fr;gap:2rem}}
-.about-text p{color:var(--ink2);margin-bottom:1rem;font-size:15px;line-height:1.8}
-.about-text p:last-child{margin-bottom:0}
-.about-text strong{color:var(--ink);font-weight:500}
-.about-text a{color:var(--pop);border-bottom:1px solid var(--pop-light)}
-.about-text a:hover{border-color:var(--pop)}
-.about-info{display:flex;flex-direction:column}
-.info-row{display:flex;flex-direction:column;padding:10px 0;border-bottom:1px solid var(--line)}
-.info-row:first-child{border-top:1px solid var(--line)}
-.info-k{font-size:10px;font-family:var(--mono);color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2px}
-.info-v{font-size:13px;color:var(--ink)}
-.info-v a{color:var(--pop)}
-.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#2d9e6b;margin-right:5px;vertical-align:middle;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.35}}
+/* ── ABOUT ── */
+.about-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+@media(max-width:600px){ .about-layout { grid-template-columns: 1fr; gap: 2rem; } }
+.about-text p { color: var(--ink2); margin-bottom: 1rem; font-size: 15px; line-height: 1.8; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-text strong { color: var(--ink); font-weight: 500; }
+.about-text a { color: var(--pop); border-bottom: 1px solid var(--pop-light); }
+.about-text a:hover { border-color: var(--pop); }
+.about-info { display: flex; flex-direction: column; gap: 0; }
+.info-row {
+  display: flex; flex-direction: column;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.info-row:first-child { border-top: 1px solid var(--line); }
+.info-k {
+  font-size: 10px; font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 2px;
+}
+.info-v { font-size: 13px; color: var(--ink); }
+.info-v a { color: var(--pop); }
+.status-dot {
+  display: inline-block; width: 7px; height: 7px;
+  border-radius: 50%; background: #2d9e6b;
+  margin-right: 5px; vertical-align: middle;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
 
-/* CONTACT */
-.contact-block{background:var(--ink);color:var(--paper);border-radius:8px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.contact-copy h3{font-family:'Lora',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.4rem;color:var(--paper)}
-.contact-copy p{font-size:14px;color:#9a9590;max-width:340px}
-.contact-btns{display:flex;gap:0.75rem;flex-wrap:wrap;flex-shrink:0}
-.btn-inv{background:transparent;color:var(--paper);border:1px solid rgba(255,255,255,0.2);padding:9px 18px;border-radius:4px;font-size:13px;font-weight:500;transition:border-color 0.15s;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.btn-inv:hover{border-color:rgba(255,255,255,0.5)}
-.btn-inv-pop{background:var(--pop);color:#fff;border:1px solid var(--pop);padding:9px 18px;border-radius:4px;font-size:13px;font-weight:500;transition:opacity 0.15s;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.btn-inv-pop:hover{opacity:0.88}
+/* ── CONTACT ── */
+.contact-block {
+  background: var(--ink); color: var(--paper);
+  border-radius: 8px; padding: 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.contact-copy h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem; font-weight: 600;
+  margin-bottom: 0.4rem; color: var(--paper);
+}
+.contact-copy p { font-size: 14px; color: #9a9590; max-width: 340px; }
+.contact-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; flex-shrink: 0; }
+.btn-inv {
+  background: transparent; color: var(--paper);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 9px 18px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  transition: border-color 0.15s; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-inv:hover { border-color: rgba(255,255,255,0.5); }
+.btn-inv-pop {
+  background: var(--pop); color: #fff;
+  border: 1px solid var(--pop);
+  padding: 9px 18px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  transition: opacity 0.15s; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-inv-pop:hover { opacity: 0.88; }
 
-footer{padding:2.5rem 2rem;text-align:center;font-size:12px;font-family:var(--mono);color:var(--ink3);letter-spacing:0.04em}
+/* ── FOOTER ── */
+footer {
+  padding: 2.5rem 2rem; text-align: center;
+  font-size: 12px; font-family: var(--mono);
+  color: var(--ink3); letter-spacing: 0.04em;
+}
 
 @media(max-width:640px){
-  .hero{padding:4rem 0 3.5rem}
-  .hero-counters{gap:2rem}
-  .project{grid-template-columns:40px 1fr}
-  .proj-links{display:none}
-  .contact-block{flex-direction:column;padding:2rem}
-  .nav-links{display:none}
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero-counters { gap: 2rem; }
+  .project { grid-template-columns: 40px 1fr; }
+  .proj-links { display: none; }
+  .contact-block { flex-direction: column; padding: 2rem; }
 }
 </style>
 </head>
@@ -160,126 +311,169 @@ footer{padding:2.5rem 2rem;text-align:center;font-size:12px;font-family:var(--mo
 <nav>
   <div class="nav-row">
     <span class="nav-mark">L. Haman <em>Bello</em></span>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#skills" data-i18n="nav.skills">Skills</a>
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
-      </div>
-      <div class="lang-switcher">
-        <div class="lang-btn" id="langBtn">
-          <span id="langCurrent">EN</span>
-          <span class="arrow">▾</span>
-        </div>
-        <div class="lang-dropdown" id="langDropdown">
-          <div class="lang-option active" data-lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-code">EN</span></div>
-          <div class="lang-option" data-lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span><span class="lang-code">FR</span></div>
-          <div class="lang-option" data-lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span><span class="lang-code">ES</span></div>
-          <div class="lang-option" data-lang="zh"><span class="lang-flag">🇨🇳</span><span class="lang-name">中文</span><span class="lang-code">ZH</span></div>
-          <div class="lang-option" data-lang="ru"><span class="lang-flag">🇷🇺</span><span class="lang-name">Русский</span><span class="lang-code">RU</span></div>
-          <div class="lang-option" data-lang="ar"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-code">AR</span></div>
-          <div class="lang-option" data-lang="de"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-code">DE</span></div>
-          <div class="lang-option" data-lang="pt"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span><span class="lang-code">PT</span></div>
-        </div>
-      </div>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
 <div class="wrap">
 
+  <!-- HERO -->
   <div class="hero">
-    <div class="hero-kicker" data-i18n="hero.kicker">Open to work</div>
-    <h1 data-i18n="hero.h1">Building software<br>that <em>actually works.</em></h1>
-    <p class="hero-sub" data-i18n="hero.sub">I'm a <strong>full-stack developer and CSE student at IUT Bangladesh</strong> with a thing for clean code, embedded systems, and products people enjoy using. I work across React, TypeScript, Java, Python, and C++.</p>
+    <div class="hero-kicker">Open to work</div>
+    <h1>Building software<br>that <em>actually works.</em></h1>
+    <p class="hero-sub">
+      I'm a <strong>junior developer and B.Sc. in CSE student (3rd year) at IUT Bangladesh</strong> with a passion for clean code, embedded systems, and building practical applications. I work with React, TypeScript, Java, Python, and C++.
+    </p>
     <div class="cta-row">
-      <a class="btn btn-solid" href="https://github.com/01329582993" target="_blank" data-i18n="hero.cta1">GitHub &rarr;</a>
-      <a class="btn btn-line" href="https://lima-chat.vercel.app/" target="_blank" data-i18n="hero.cta2">See LimaChat live</a>
-      <a class="btn btn-line" href="#contact" data-i18n="hero.cta3">Get in touch</a>
+      <a class="btn btn-solid" href="https://github.com/01329582993" target="_blank">GitHub &rarr;</a>
+      <a class="btn btn-line" href="https://wa.me/8801329582993" target="_blank">WhatsApp</a>
+      <a class="btn btn-line" href="#contact">Get in touch</a>
     </div>
     <div class="hero-counters">
-      <div><div class="counter-n">46<sup>+</sup></div><div class="counter-l" data-i18n="hero.c1">Repositories</div></div>
-      <div><div class="counter-n">311</div><div class="counter-l" data-i18n="hero.c2">Contributions</div></div>
-      <div><div class="counter-n">6<sup>+</sup></div><div class="counter-l" data-i18n="hero.c3">Languages</div></div>
-      <div><div class="counter-n">3<sup>+</sup></div><div class="counter-l" data-i18n="hero.c4">Years building</div></div>
+      <div>
+        <div class="counter-n">46<sup>+</sup></div>
+        <div class="counter-l">Repositories</div>
+      </div>
+      <div>
+        <div class="counter-n">311</div>
+        <div class="counter-l">Contributions</div>
+      </div>
+      <div>
+        <div class="counter-n">6<sup>+</sup></div>
+        <div class="counter-l">Languages</div>
+      </div>
+      <div>
+        <div class="counter-n">3<sup>+</sup></div>
+        <div class="counter-l">Years building</div>
+      </div>
     </div>
   </div>
 
+  <!-- PROJECTS -->
   <div class="sec" id="projects">
     <div class="sec-head">
-      <div class="sec-label" data-i18n="projects.label">Selected work</div>
-      <h2 data-i18n="projects.title">Things I've built</h2>
+      <div class="sec-label">Selected work</div>
+      <h2>Things I've built</h2>
     </div>
+
     <div class="projects">
+
       <div class="project">
         <div class="proj-num">01</div>
         <div class="proj-body">
           <div class="proj-name">LimaChat</div>
-          <div class="proj-desc" data-i18n="projects.p1">An AI-powered conversational form builder — users answer questions in a chat interface and responses land in a dashboard. Built with TypeScript and deployed to production.</div>
-          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Next.js</span><span class="proj-tag">AI</span><span class="proj-tag">Full-stack</span></div>
+          <div class="proj-desc">An AI-powered conversational form builder — users answer questions in a chat interface and responses land in a dashboard. Built with TypeScript and Next.js.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">TypeScript</span>
+            <span class="proj-tag">Next.js</span>
+            <span class="proj-tag">AI</span>
+            <span class="proj-tag">Full-stack</span>
+          </div>
         </div>
         <div class="proj-links">
-          <a class="proj-live" href="https://lima-chat.vercel.app/" target="_blank" data-i18n="projects.live">Live ↗</a>
-          <a class="proj-link" href="https://github.com/01329582993/LimaChat" target="_blank" data-i18n="projects.code">Code</a>
+          <a class="proj-link" href="https://github.com/01329582993/LimaChat" target="_blank">Code</a>
         </div>
       </div>
+
       <div class="project">
         <div class="proj-num">02</div>
         <div class="proj-body">
           <div class="proj-name">UgraMarket</div>
-          <div class="proj-desc" data-i18n="projects.p2">A marketplace application built with TypeScript. Covers product listings, user flows, and real-world e-commerce patterns.</div>
-          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Web app</span></div>
+          <div class="proj-desc">An application designed for farmers to manage and trade agricultural products. Deployed and available on GitHub.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">TypeScript</span>
+            <span class="proj-tag">Agriculture</span>
+            <span class="proj-tag">Web app</span>
+          </div>
         </div>
-        <div class="proj-links"><a class="proj-link" href="https://github.com/01329582993/UgraMarket" target="_blank" data-i18n="projects.code">Code</a></div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/UgraMarket" target="_blank">Code</a>
+        </div>
       </div>
+
       <div class="project">
         <div class="proj-num">03</div>
         <div class="proj-body">
-          <div class="proj-name">Weavora <span class="proj-fork" data-i18n="projects.fork">fork</span></div>
-          <div class="proj-desc" data-i18n="projects.p3">Contributed to Weavora, an open-source TypeScript project. Involves reading unfamiliar codebases and working within an existing architecture.</div>
-          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Open source</span></div>
+          <div class="proj-name">
+            Weavora
+            <span class="proj-fork">fork</span>
+          </div>
+          <div class="proj-desc">Contributed to Weavora, an open-source TypeScript project. Involves reading unfamiliar codebases, making meaningful contributions, and working within an existing architecture.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">TypeScript</span>
+            <span class="proj-tag">Open source</span>
+            <span class="proj-tag">Collaboration</span>
+          </div>
         </div>
-        <div class="proj-links"><a class="proj-link" href="https://github.com/01329582993/Weavora" target="_blank" data-i18n="projects.code">Code</a></div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/Weavora" target="_blank">Code</a>
+        </div>
       </div>
+
       <div class="project">
         <div class="proj-num">04</div>
         <div class="proj-body">
           <div class="proj-name">IUSER_ROUTER_MANAGER</div>
-          <div class="proj-desc" data-i18n="projects.p4">A user and router management system — backend logic, user roles, and routing. Demonstrates system architecture and access control patterns.</div>
-          <div class="proj-tags"><span class="proj-tag">Systems</span><span class="proj-tag">Backend</span></div>
+          <div class="proj-desc">A user and router management system — backend logic, user roles, and routing. Demonstrates understanding of system architecture and access control patterns.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Systems</span>
+            <span class="proj-tag">Backend</span>
+          </div>
         </div>
-        <div class="proj-links"><a class="proj-link" href="https://github.com/01329582993/IUSER_ROUTER_MANAGER" target="_blank" data-i18n="projects.code">Code</a></div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/IUSER_ROUTER_MANAGER" target="_blank">Code</a>
+        </div>
       </div>
+
       <div class="project">
         <div class="proj-num">05</div>
         <div class="proj-body">
           <div class="proj-name">panitech</div>
-          <div class="proj-desc" data-i18n="projects.p5">A Java-based project built at IUT. Covers object-oriented design and backend development patterns in a real academic setting.</div>
-          <div class="proj-tags"><span class="proj-tag">Java</span><span class="proj-tag">OOP</span><span class="proj-tag">Backend</span></div>
+          <div class="proj-desc">A Java-based project built at IUT. Covers object-oriented design and backend development patterns in a real academic setting.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Java</span>
+            <span class="proj-tag">OOP</span>
+            <span class="proj-tag">Backend</span>
+          </div>
         </div>
-        <div class="proj-links"><a class="proj-link" href="https://github.com/01329582993/panitech" target="_blank" data-i18n="projects.code">Code</a></div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/panitech" target="_blank">Code</a>
+        </div>
       </div>
+
       <div class="project">
         <div class="proj-num">06</div>
         <div class="proj-body">
           <div class="proj-name">Pong Game in C++</div>
-          <div class="proj-desc" data-i18n="projects.p6">Classic Pong from scratch in C++. Game loop, collision detection, rendering — no engine, just the language.</div>
-          <div class="proj-tags"><span class="proj-tag">C++</span><span class="proj-tag">Game dev</span><span class="proj-tag">Systems</span></div>
+          <div class="proj-desc">Classic Pong implemented from scratch in C++. Game loop, collision detection, rendering — built without an engine, just the language.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">C++</span>
+            <span class="proj-tag">Game dev</span>
+            <span class="proj-tag">Systems</span>
+          </div>
         </div>
-        <div class="proj-links"><a class="proj-link" href="https://github.com/01329582993/Pong_Game_with_CPlus" target="_blank" data-i18n="projects.code">Code</a></div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/01329582993/Pong_Game_with_CPlus" target="_blank">Code</a>
+        </div>
       </div>
+
     </div>
   </div>
 
+  <!-- SKILLS -->
   <div class="sec" id="skills">
     <div class="sec-head">
-      <div class="sec-label" data-i18n="skills.label">Capabilities</div>
-      <h2 data-i18n="skills.title">What I work with</h2>
+      <div class="sec-label">Capabilities</div>
+      <h2>What I work with</h2>
     </div>
     <div class="skills-layout">
       <div class="skill-col">
-        <h3 data-i18n="skills.lang">Languages</h3>
+        <h3>Languages</h3>
         <div class="skill-row"><span class="skill-name">TypeScript / JavaScript</span><span class="skill-dot hi"></span></div>
         <div class="skill-row"><span class="skill-name">Python</span><span class="skill-dot hi"></span></div>
         <div class="skill-row"><span class="skill-name">Java</span><span class="skill-dot md"></span></div>
@@ -287,7 +481,7 @@ footer{padding:2.5rem 2rem;text-align:center;font-size:12px;font-family:var(--mo
         <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-dot hi"></span></div>
       </div>
       <div class="skill-col">
-        <h3 data-i18n="skills.tools">Frameworks & tools</h3>
+        <h3>Frameworks & tools</h3>
         <div class="skill-row"><span class="skill-name">React / Next.js</span><span class="skill-dot hi"></span></div>
         <div class="skill-row"><span class="skill-name">Node.js</span><span class="skill-dot md"></span></div>
         <div class="skill-row"><span class="skill-name">Git / GitHub</span><span class="skill-dot hi"></span></div>
@@ -297,312 +491,67 @@ footer{padding:2.5rem 2rem;text-align:center;font-size:12px;font-family:var(--mo
     </div>
   </div>
 
+  <!-- ABOUT -->
   <div class="sec" id="about">
     <div class="sec-head">
-      <div class="sec-label" data-i18n="about.label">Background</div>
-      <h2 data-i18n="about.title">A bit about me</h2>
+      <div class="sec-label">Background</div>
+      <h2>A bit about me</h2>
     </div>
     <div class="about-layout">
       <div class="about-text">
-        <p data-i18n="about.p1">I'm Limassou — a developer based in Bangladesh, currently studying Computer Science and Engineering at <strong>IUT</strong>. I've been writing code for a few years now, and the thing that keeps me going is the gap between an idea and something that actually runs.</p>
-        <p data-i18n="about.p2">My work spans the full stack: I've shipped a <strong>live TypeScript product</strong> (LimaChat), built backend systems in Java, written game logic in C++, and programmed Arduino devices from scratch.</p>
-        <p data-i18n="about.p3">I've contributed to <strong>28+ repositories</strong> this year, including team projects and open-source work. 92% of my activity is code — I write more than I talk about writing.</p>
-        <p data-i18n="about.p4">Outside of code, I'm interested in robotics, AI systems, and how software interacts with the physical world.</p>
+        <p>I'm Limassou — a junior developer based in Bangladesh, currently pursuing my B.Sc. in Computer Science and Engineering (3rd year) at <strong>IUT</strong>. I've been learning and writing code for a few years, motivated by building applications that solve real-world problems.</p>
+        <p>My academic and personal projects span various areas: I've built a TypeScript form builder (LimaChat), designed backend systems in Java, written game logic in C++, and programmed embedded Arduino devices. I enjoy working across different parts of the stack.</p>
+        <p>I've contributed to <strong>28+ repositories</strong> this year, including team projects and open-source work, and I'm always looking to learn and improve my skills.</p>
+        <p>Outside of code, I'm interested in robotics, AI systems, and how software interacts with the physical world. I have an <a href="https://orcid.org/0009-0008-6619-529X" target="_blank">ORCID profile</a> for academic work.</p>
       </div>
       <div class="about-info">
-        <div class="info-row"><span class="info-k" data-i18n="about.loc">Location</span><span class="info-v">Bangladesh</span></div>
-        <div class="info-row"><span class="info-k" data-i18n="about.edu">Education</span><span class="info-v">CSE, IUT</span></div>
-        <div class="info-row"><span class="info-k" data-i18n="about.focus">Focus</span><span class="info-v" data-i18n="about.focusval">Full-stack & Systems</span></div>
-        <div class="info-row"><span class="info-k">GitHub</span><span class="info-v"><a href="https://github.com/01329582993" target="_blank">01329582993</a></span></div>
-        <div class="info-row"><span class="info-k" data-i18n="about.project">Live project</span><span class="info-v"><a href="https://lima-chat.vercel.app/" target="_blank">lima-chat.vercel.app</a></span></div>
-        <div class="info-row"><span class="info-k" data-i18n="about.status">Status</span><span class="info-v"><span class="status-dot"></span><span data-i18n="about.statusval">Open to work</span></span></div>
+        <div class="info-row">
+          <span class="info-k">Location</span>
+          <span class="info-v">Bangladesh</span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Education</span>
+          <span class="info-v">B.Sc. in CSE (3rd year), IUT</span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Focus</span>
+          <span class="info-v">Full-stack & Systems</span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">GitHub</span>
+          <span class="info-v"><a href="https://github.com/01329582993" target="_blank">01329582993</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">WhatsApp</span>
+          <span class="info-v"><a href="https://wa.me/8801329582993" target="_blank">+8801329582993</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-k">Status</span>
+          <span class="info-v"><span class="status-dot"></span>Open to work</span>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- CONTACT -->
   <div class="sec" id="contact" style="border-bottom:none">
     <div class="contact-block">
       <div class="contact-copy">
-        <h3 data-i18n="contact.h3">Let's talk.</h3>
-        <p data-i18n="contact.p">I'm looking for an intermediate developer role. If something I've built caught your eye, reach out — I reply fast.</p>
+        <h3>Let's talk.</h3>
+        <p>I'm looking for a junior developer role or internship. If something I've built caught your eye, reach out — I reply fast.</p>
       </div>
       <div class="contact-btns">
         <a class="btn-inv-pop" href="https://github.com/01329582993" target="_blank">GitHub &rarr;</a>
         <a class="btn-inv" href="https://wa.me/8801329582993" target="_blank">WhatsApp</a>
-        <a class="btn-inv" href="https://lima-chat.vercel.app/" target="_blank">LimaChat</a>
       </div>
     </div>
   </div>
 
 </div>
 
-<footer data-i18n="footer">Limassou Haman Bello · 2026 · Built by hand</footer>
+<footer>
+  Limassou Haman Bello &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Built by hand
+</footer>
 
-<script>
-const T = {
-  en: {
-    "nav.projects":"Projects","nav.skills":"Skills","nav.about":"About","nav.contact":"Contact",
-    "hero.kicker":"Open to work",
-    "hero.h1":"Building software<br>that <em>actually works.</em>",
-    "hero.sub":"I'm a <strong>full-stack developer and CSE student at IUT Bangladesh</strong> with a thing for clean code, embedded systems, and products people enjoy using. I work across React, TypeScript, Java, Python, and C++.",
-    "hero.cta1":"GitHub →","hero.cta2":"See LimaChat live","hero.cta3":"Get in touch",
-    "hero.c1":"Repositories","hero.c2":"Contributions","hero.c3":"Languages","hero.c4":"Years building",
-    "projects.label":"Selected work","projects.title":"Things I've built",
-    "projects.live":"Live ↗","projects.code":"Code","projects.fork":"fork",
-    "projects.p1":"An AI-powered conversational form builder — users answer questions in a chat interface and responses land in a dashboard. Built with TypeScript and deployed to production.",
-    "projects.p2":"A marketplace application built with TypeScript. Covers product listings, user flows, and real-world e-commerce patterns.",
-    "projects.p3":"Contributed to Weavora, an open-source TypeScript project. Involves reading unfamiliar codebases and working within an existing architecture.",
-    "projects.p4":"A user and router management system — backend logic, user roles, and routing. Demonstrates system architecture and access control patterns.",
-    "projects.p5":"A Java-based project built at IUT. Covers object-oriented design and backend development patterns in a real academic setting.",
-    "projects.p6":"Classic Pong from scratch in C++. Game loop, collision detection, rendering — no engine, just the language.",
-    "skills.label":"Capabilities","skills.title":"What I work with","skills.lang":"Languages","skills.tools":"Frameworks & tools",
-    "about.label":"Background","about.title":"A bit about me",
-    "about.p1":"I'm Limassou — a developer based in Bangladesh, currently studying Computer Science and Engineering at <strong>IUT</strong>. I've been writing code for a few years now, and the thing that keeps me going is the gap between an idea and something that actually runs.",
-    "about.p2":"My work spans the full stack: I've shipped a <strong>live TypeScript product</strong> (LimaChat), built backend systems in Java, written game logic in C++, and programmed Arduino devices from scratch.",
-    "about.p3":"I've contributed to <strong>28+ repositories</strong> this year, including team projects and open-source work. 92% of my activity is code — I write more than I talk about writing.",
-    "about.p4":"Outside of code, I'm interested in robotics, AI systems, and how software interacts with the physical world.",
-    "about.loc":"Location","about.edu":"Education","about.focus":"Focus","about.focusval":"Full-stack & Systems",
-    "about.project":"Live project","about.status":"Status","about.statusval":"Open to work",
-    "contact.h3":"Let's talk.","contact.p":"I'm looking for an intermediate developer role. If something I've built caught your eye, reach out — I reply fast.",
-    "footer":"Limassou Haman Bello · 2026 · Built by hand"
-  },
-  fr: {
-    "nav.projects":"Projets","nav.skills":"Compétences","nav.about":"À propos","nav.contact":"Contact",
-    "hero.kicker":"Disponible",
-    "hero.h1":"Créer des logiciels<br>qui <em>fonctionnent vraiment.</em>",
-    "hero.sub":"Je suis <strong>développeur full-stack et étudiant en informatique à l'IUT Bangladesh</strong> — passionné par le code propre, les systèmes embarqués et les produits que les gens aiment utiliser. Je travaille avec React, TypeScript, Java, Python et C++.",
-    "hero.cta1":"GitHub →","hero.cta2":"Voir LimaChat","hero.cta3":"Me contacter",
-    "hero.c1":"Dépôts","hero.c2":"Contributions","hero.c3":"Langages","hero.c4":"Années de code",
-    "projects.label":"Travaux sélectionnés","projects.title":"Ce que j'ai construit",
-    "projects.live":"En ligne ↗","projects.code":"Code","projects.fork":"fork",
-    "projects.p1":"Un constructeur de formulaires conversationnel basé sur l'IA — les utilisateurs répondent dans une interface chat et les réponses arrivent dans un tableau de bord. Construit en TypeScript et déployé en production.",
-    "projects.p2":"Une application de marché en TypeScript. Gestion des annonces, flux utilisateurs et logiques e-commerce réelles.",
-    "projects.p3":"Contribution à Weavora, un projet open-source en TypeScript. Lecture de code inconnu et travail au sein d'une architecture existante.",
-    "projects.p4":"Système de gestion d'utilisateurs et de routeurs — logique backend, rôles, routage. Démontre la maîtrise de l'architecture système.",
-    "projects.p5":"Projet Java réalisé à l'IUT. Conception orientée objet et patterns de développement backend en contexte académique.",
-    "projects.p6":"Pong classique en C++ from scratch. Boucle de jeu, détection de collision, rendu — sans moteur, juste le langage.",
-    "skills.label":"Compétences","skills.title":"Ce avec quoi je travaille","skills.lang":"Langages","skills.tools":"Frameworks & outils",
-    "about.label":"Parcours","about.title":"Un peu sur moi",
-    "about.p1":"Je suis Limassou — développeur au Bangladesh, actuellement étudiant en informatique à l'<strong>IUT</strong>. Je code depuis quelques années et ce qui me motive, c'est de transformer une idée en quelque chose qui tourne vraiment.",
-    "about.p2":"Mon travail couvre toute la pile : j'ai livré un <strong>produit TypeScript en production</strong> (LimaChat), construit des systèmes backend en Java, écrit de la logique de jeu en C++, et programmé des Arduino.",
-    "about.p3":"J'ai contribué à <strong>28+ dépôts</strong> cette année, dont des projets d'équipe et open-source. 92% de mon activité, c'est du code.",
-    "about.p4":"En dehors du code, je m'intéresse à la robotique, aux systèmes d'IA et à la façon dont le logiciel interagit avec le monde physique.",
-    "about.loc":"Lieu","about.edu":"Formation","about.focus":"Domaine","about.focusval":"Full-stack & Systèmes",
-    "about.project":"Projet live","about.status":"Statut","about.statusval":"Disponible",
-    "contact.h3":"Parlons-en.","contact.p":"Je cherche un poste de développeur intermédiaire. Si quelque chose vous a intéressé, écrivez-moi — je réponds vite.",
-    "footer":"Limassou Haman Bello · 2026 · Fait à la main"
-  },
-  es: {
-    "nav.projects":"Proyectos","nav.skills":"Habilidades","nav.about":"Sobre mí","nav.contact":"Contacto",
-    "hero.kicker":"Disponible",
-    "hero.h1":"Construyendo software<br>que <em>realmente funciona.</em>",
-    "hero.sub":"Soy <strong>desarrollador full-stack y estudiante de informática en IUT Bangladesh</strong> — me apasiona el código limpio, los sistemas embebidos y los productos que la gente disfruta usar. Trabajo con React, TypeScript, Java, Python y C++.",
-    "hero.cta1":"GitHub →","hero.cta2":"Ver LimaChat","hero.cta3":"Contáctame",
-    "hero.c1":"Repositorios","hero.c2":"Contribuciones","hero.c3":"Lenguajes","hero.c4":"Años programando",
-    "projects.label":"Trabajo selecto","projects.title":"Lo que he construido",
-    "projects.live":"En vivo ↗","projects.code":"Código","projects.fork":"fork",
-    "projects.p1":"Constructor de formularios conversacional con IA — los usuarios responden en un chat y las respuestas llegan a un dashboard. Construido en TypeScript y desplegado en producción.",
-    "projects.p2":"Aplicación de marketplace en TypeScript. Listados de productos, flujos de usuario y patrones de e-commerce reales.",
-    "projects.p3":"Contribución a Weavora, proyecto open-source en TypeScript. Lectura de código ajeno y trabajo dentro de una arquitectura existente.",
-    "projects.p4":"Sistema de gestión de usuarios y enrutadores — lógica backend, roles y enrutamiento. Demuestra arquitectura de sistemas y control de acceso.",
-    "projects.p5":"Proyecto Java en IUT. Diseño orientado a objetos y patrones de desarrollo backend en contexto académico real.",
-    "projects.p6":"Pong clásico desde cero en C++. Bucle de juego, detección de colisiones, renderizado — sin motor, solo el lenguaje.",
-    "skills.label":"Capacidades","skills.title":"Con qué trabajo","skills.lang":"Lenguajes","skills.tools":"Frameworks y herramientas",
-    "about.label":"Trayectoria","about.title":"Un poco sobre mí",
-    "about.p1":"Soy Limassou — desarrollador en Bangladesh, estudiando Informática en <strong>IUT</strong>. Llevo varios años escribiendo código y lo que me mueve es transformar ideas en algo que realmente funciona.",
-    "about.p2":"Mi trabajo abarca todo el stack: he lanzado un <strong>producto TypeScript en producción</strong> (LimaChat), construido sistemas backend en Java, lógica de juego en C++, y programado Arduinos.",
-    "about.p3":"He contribuido a <strong>28+ repositorios</strong> este año, incluyendo proyectos de equipo y open-source. El 92% de mi actividad es código.",
-    "about.p4":"Fuera del código, me interesan la robótica, los sistemas de IA y cómo el software interactúa con el mundo físico.",
-    "about.loc":"Ubicación","about.edu":"Educación","about.focus":"Enfoque","about.focusval":"Full-stack y Sistemas",
-    "about.project":"Proyecto live","about.status":"Estado","about.statusval":"Disponible",
-    "contact.h3":"Hablemos.","contact.p":"Busco un puesto de desarrollador intermedio. Si algo te llamó la atención, escríbeme — respondo rápido.",
-    "footer":"Limassou Haman Bello · 2026 · Hecho a mano"
-  },
-  zh: {
-    "nav.projects":"项目","nav.skills":"技能","nav.about":"关于","nav.contact":"联系",
-    "hero.kicker":"求职中",
-    "hero.h1":"构建<em>真正可用</em>的软件。",
-    "hero.sub":"我是<strong>孟加拉国IUT的全栈开发者和计算机科学学生</strong>，热衷于整洁的代码、嵌入式系统和用户喜爱的产品。我使用 React、TypeScript、Java、Python 和 C++。",
-    "hero.cta1":"GitHub →","hero.cta2":"查看 LimaChat","hero.cta3":"联系我",
-    "hero.c1":"代码仓库","hero.c2":"贡献数","hero.c3":"编程语言","hero.c4":"开发年限",
-    "projects.label":"精选作品","projects.title":"我构建的项目",
-    "projects.live":"在线预览 ↗","projects.code":"源码","projects.fork":"fork",
-    "projects.p1":"AI 驱动的对话式表单构建器——用户在聊天界面回答问题，响应数据进入仪表板。使用 TypeScript 构建并已部署至生产环境。",
-    "projects.p2":"基于 TypeScript 的电商应用，涵盖产品列表、用户流程和真实电商逻辑。",
-    "projects.p3":"为开源 TypeScript 项目 Weavora 做出贡献，包括阅读陌生代码库并在现有架构内工作。",
-    "projects.p4":"用户与路由管理系统——包含后端逻辑、用户角色和路由管理，展示系统架构与访问控制能力。",
-    "projects.p5":"在 IUT 完成的 Java 项目，涵盖面向对象设计和后端开发模式。",
-    "projects.p6":"纯 C++ 实现的经典乒乓游戏，包含游戏循环、碰撞检测和渲染——无引擎，仅靠语言本身。",
-    "skills.label":"技术能力","skills.title":"我的技术栈","skills.lang":"编程语言","skills.tools":"框架与工具",
-    "about.label":"个人背景","about.title":"关于我",
-    "about.p1":"我是 Limassou，来自孟加拉国的开发者，目前在 <strong>IUT</strong> 学习计算机科学与工程。写代码多年，驱动我前进的是把想法变成真实运行的东西。",
-    "about.p2":"我的工作横跨全栈：上线了 <strong>TypeScript 生产项目</strong>（LimaChat），用 Java 构建后端系统，用 C++ 写游戏逻辑，还从零编程 Arduino。",
-    "about.p3":"今年为 <strong>28+ 个仓库</strong>做出贡献，含团队项目和开源项目。92% 的活动是写代码。",
-    "about.p4":"代码之外，我对机器人技术、AI 系统以及软件与物理世界的交互充满兴趣。",
-    "about.loc":"所在地","about.edu":"学历","about.focus":"方向","about.focusval":"全栈与系统开发",
-    "about.project":"线上项目","about.status":"状态","about.statusval":"求职中",
-    "contact.h3":"我们聊聊吧。","contact.p":"我正在寻找中级开发者职位。如果有什么吸引了你，请联系我——我回复很快。",
-    "footer":"Limassou Haman Bello · 2026 · 手工打造"
-  },
-  ru: {
-    "nav.projects":"Проекты","nav.skills":"Навыки","nav.about":"Обо мне","nav.contact":"Контакт",
-    "hero.kicker":"Ищу работу",
-    "hero.h1":"Создаю программы,<br>которые <em>действительно работают.</em>",
-    "hero.sub":"Я <strong>full-stack разработчик и студент факультета информатики в IUT Бангладеш</strong> — увлечён чистым кодом, встраиваемыми системами и продуктами, которыми люди рады пользоваться. Работаю с React, TypeScript, Java, Python и C++.",
-    "hero.cta1":"GitHub →","hero.cta2":"Открыть LimaChat","hero.cta3":"Связаться",
-    "hero.c1":"Репозитории","hero.c2":"Контрибуции","hero.c3":"Языки","hero.c4":"Лет в коде",
-    "projects.label":"Избранные работы","projects.title":"Что я создал",
-    "projects.live":"Открыть ↗","projects.code":"Код","projects.fork":"форк",
-    "projects.p1":"ИИ-конструктор разговорных форм — пользователи отвечают на вопросы в чате, ответы поступают в дашборд. Написан на TypeScript и развёрнут в продакшене.",
-    "projects.p2":"Маркетплейс на TypeScript: листинги товаров, пользовательские сценарии и реальная e-commerce логика.",
-    "projects.p3":"Вклад в открытый TypeScript-проект Weavora: чтение чужой кодовой базы и работа в рамках существующей архитектуры.",
-    "projects.p4":"Система управления пользователями и маршрутизаторами — бэкенд-логика, роли, маршрутизация. Демонстрирует архитектуру систем и контроль доступа.",
-    "projects.p5":"Учебный Java-проект в IUT, охватывающий объектно-ориентированное проектирование и бэкенд-паттерны.",
-    "projects.p6":"Классический Pong с нуля на C++: игровой цикл, обнаружение столкновений, рендеринг — без движка, только язык.",
-    "skills.label":"Компетенции","skills.title":"С чем я работаю","skills.lang":"Языки программирования","skills.tools":"Фреймворки и инструменты",
-    "about.label":"Биография","about.title":"Немного обо мне",
-    "about.p1":"Я Лимасу — разработчик из Бангладеш, студент факультета информатики и вычислительной техники <strong>IUT</strong>. Пишу код уже несколько лет, и меня движет желание превращать идеи в работающие продукты.",
-    "about.p2":"Мой опыт охватывает весь стек: запустил <strong>TypeScript-продукт</strong> в продакшене (LimaChat), построил бэкенд-системы на Java, написал игровую логику на C++ и программировал Arduino с нуля.",
-    "about.p3":"В этом году внёс вклад в <strong>28+ репозиториев</strong>, включая командные и open-source проекты. 92% моей активности — это код.",
-    "about.p4":"Помимо кода, меня интересуют робототехника, системы ИИ и взаимодействие программного обеспечения с физическим миром.",
-    "about.loc":"Местоположение","about.edu":"Образование","about.focus":"Направление","about.focusval":"Full-stack и системы",
-    "about.project":"Живой проект","about.status":"Статус","about.statusval":"Ищу работу",
-    "contact.h3":"Давайте поговорим.","contact.p":"Я ищу позицию разработчика среднего уровня. Если что-то вас заинтересовало — пишите, отвечаю быстро.",
-    "footer":"Limassou Haman Bello · 2026 · Сделано вручную"
-  },
-  ar: {
-    "nav.projects":"المشاريع","nav.skills":"المهارات","nav.about":"عنّي","nav.contact":"تواصل",
-    "hero.kicker":"متاح للعمل",
-    "hero.h1":"أبني برمجيات<br><em>تعمل فعلاً.</em>",
-    "hero.sub":"أنا <strong>مطوّر full-stack وطالب في علم الحاسوب بجامعة IUT بنغلاديش</strong> — أحبّ الكود النظيف والأنظمة المدمجة والمنتجات التي يستمتع الناس باستخدامها. أعمل بـ React وTypeScript وJava وPython وC++.",
-    "hero.cta1":"GitHub →","hero.cta2":"تجربة LimaChat","hero.cta3":"تواصل معي",
-    "hero.c1":"مستودعات","hero.c2":"مساهمات","hero.c3":"لغات","hero.c4":"سنوات برمجة",
-    "projects.label":"أعمال مختارة","projects.title":"ما بنيته",
-    "projects.live":"مباشر ↗","projects.code":"الكود","projects.fork":"fork",
-    "projects.p1":"منشئ نماذج محادثة مدعوم بالذكاء الاصطناعي — يجيب المستخدمون على الأسئلة في واجهة دردشة وتصل الردود إلى لوحة تحكم. مبني بـ TypeScript ومنشور في بيئة الإنتاج.",
-    "projects.p2":"تطبيق سوق إلكتروني بـ TypeScript، يشمل قوائم المنتجات وتدفقات المستخدمين وأنماط التجارة الإلكترونية الحقيقية.",
-    "projects.p3":"مساهمة في Weavora، مشروع مفتوح المصدر بـ TypeScript، تضمّنت قراءة كود غير مألوف والعمل ضمن بنية قائمة.",
-    "projects.p4":"نظام لإدارة المستخدمين والموجّهات — منطق backend وأدوار المستخدمين والتوجيه، يعكس فهماً لبنية الأنظمة والتحكم في الوصول.",
-    "projects.p5":"مشروع Java أكاديمي في IUT، يغطي التصميم كائني التوجه وأنماط تطوير الـbackend.",
-    "projects.p6":"لعبة Pong كلاسيكية من الصفر بـ C++، بدون محرك — فقط حلقة اللعبة، كشف التصادمات، والرسم.",
-    "skills.label":"الكفاءات","skills.title":"ما أعمل به","skills.lang":"لغات البرمجة","skills.tools":"الأطر والأدوات",
-    "about.label":"الخلفية","about.title":"قليل عنّي",
-    "about.p1":"أنا ليماسو — مطوّر مقيم في بنغلاديش، أدرس حالياً الحاسوب والهندسة في <strong>IUT</strong>. أكتب الكود منذ سنوات، وما يحرّكني هو تحويل الأفكار إلى منتجات تعمل فعلاً.",
-    "about.p2":"عملي يمتد عبر الـstack الكامل: أطلقت <strong>منتج TypeScript في الإنتاج</strong> (LimaChat)، وبنيت أنظمة backend بـJava، وكتبت منطق ألعاب بـC++، وبرمجت Arduino من الصفر.",
-    "about.p3":"ساهمت في <strong>أكثر من 28 مستودعاً</strong> هذا العام، منها مشاريع فريق ومفتوحة المصدر. 92% من نشاطي هو كتابة كود.",
-    "about.p4":"خارج البرمجة، أهتم بالروبوتات وأنظمة الذكاء الاصطناعي وكيفية تفاعل البرمجيات مع العالم المادي.",
-    "about.loc":"الموقع","about.edu":"التعليم","about.focus":"التخصص","about.focusval":"Full-stack والأنظمة",
-    "about.project":"المشروع الحي","about.status":"الحالة","about.statusval":"متاح للعمل",
-    "contact.h3":"لنتحدث.","contact.p":"أبحث عن دور مطوّر متوسط المستوى. إن استأثر اهتمامك شيء رأيته، تواصل معي — أردّ بسرعة.",
-    "footer":"Limassou Haman Bello · 2026 · صُنع بعناية"
-  },
-  de: {
-    "nav.projects":"Projekte","nav.skills":"Fähigkeiten","nav.about":"Über mich","nav.contact":"Kontakt",
-    "hero.kicker":"Offen für Stellen",
-    "hero.h1":"Software bauen,<br>die <em>wirklich funktioniert.</em>",
-    "hero.sub":"Ich bin <strong>Full-Stack-Entwickler und Informatikstudent an der IUT Bangladesh</strong> — begeistert von sauberem Code, eingebetteten Systemen und Produkten, die Menschen gerne nutzen. Ich arbeite mit React, TypeScript, Java, Python und C++.",
-    "hero.cta1":"GitHub →","hero.cta2":"LimaChat ansehen","hero.cta3":"Kontakt aufnehmen",
-    "hero.c1":"Repositories","hero.c2":"Beiträge","hero.c3":"Sprachen","hero.c4":"Jahre Entwicklung",
-    "projects.label":"Ausgewählte Arbeiten","projects.title":"Was ich gebaut habe",
-    "projects.live":"Live ↗","projects.code":"Code","projects.fork":"Fork",
-    "projects.p1":"KI-gestützter Gesprächs-Formular-Builder — Nutzer beantworten Fragen im Chat, Antworten landen im Dashboard. Mit TypeScript gebaut und in Produktion deployed.",
-    "projects.p2":"Marktplatz-Anwendung in TypeScript mit Produktlisten, Benutzerflüssen und echten E-Commerce-Mustern.",
-    "projects.p3":"Beitrag zu Weavora, einem Open-Source-TypeScript-Projekt — unbekannte Codebasen lesen und in bestehender Architektur arbeiten.",
-    "projects.p4":"Benutzer- und Router-Verwaltungssystem — Backend-Logik, Benutzerrollen und Routing. Zeigt Systemarchitektur und Zugriffskontrolle.",
-    "projects.p5":"Java-Projekt an der IUT — objektorientiertes Design und Backend-Entwicklungsmuster im akademischen Umfeld.",
-    "projects.p6":"Klassisches Pong von Grund auf in C++ — Spielschleife, Kollisionserkennung, Rendering — kein Engine, nur die Sprache.",
-    "skills.label":"Kompetenzen","skills.title":"Womit ich arbeite","skills.lang":"Programmiersprachen","skills.tools":"Frameworks & Werkzeuge",
-    "about.label":"Hintergrund","about.title":"Ein bisschen über mich",
-    "about.p1":"Ich bin Limassou — Entwickler in Bangladesh, derzeit Informatikstudent an der <strong>IUT</strong>. Ich programmiere seit einigen Jahren und was mich antreibt, ist die Lücke zwischen einer Idee und etwas, das wirklich läuft.",
-    "about.p2":"Meine Arbeit umfasst den gesamten Stack: Ich habe ein <strong>TypeScript-Produkt in Produktion</strong> (LimaChat) geliefert, Backend-Systeme in Java gebaut, Spiellogik in C++ geschrieben und Arduino-Geräte programmiert.",
-    "about.p3":"Ich habe dieses Jahr zu <strong>28+ Repositories</strong> beigetragen, darunter Team- und Open-Source-Projekte. 92% meiner Aktivität ist Code.",
-    "about.p4":"Neben dem Code interessiere ich mich für Robotik, KI-Systeme und wie Software mit der physischen Welt interagiert.",
-    "about.loc":"Standort","about.edu":"Ausbildung","about.focus":"Schwerpunkt","about.focusval":"Full-Stack & Systeme",
-    "about.project":"Live-Projekt","about.status":"Status","about.statusval":"Offen für Stellen",
-    "contact.h3":"Lass uns reden.","contact.p":"Ich suche eine Stelle als Entwickler auf mittlerem Niveau. Wenn etwas dein Interesse geweckt hat, schreib mir — ich antworte schnell.",
-    "footer":"Limassou Haman Bello · 2026 · Von Hand gebaut"
-  },
-  pt: {
-    "nav.projects":"Projetos","nav.skills":"Habilidades","nav.about":"Sobre mim","nav.contact":"Contato",
-    "hero.kicker":"Disponível para oportunidades",
-    "hero.h1":"Construindo software<br>que <em>realmente funciona.</em>",
-    "hero.sub":"Sou <strong>desenvolvedor full-stack e estudante de Ciência da Computação no IUT Bangladesh</strong> — apaixonado por código limpo, sistemas embarcados e produtos que as pessoas adoram usar. Trabalho com React, TypeScript, Java, Python e C++.",
-    "hero.cta1":"GitHub →","hero.cta2":"Ver LimaChat","hero.cta3":"Entre em contato",
-    "hero.c1":"Repositórios","hero.c2":"Contribuições","hero.c3":"Linguagens","hero.c4":"Anos programando",
-    "projects.label":"Trabalhos selecionados","projects.title":"O que construí",
-    "projects.live":"Ao vivo ↗","projects.code":"Código","projects.fork":"fork",
-    "projects.p1":"Construtor de formulários conversacional com IA — usuários respondem perguntas no chat e as respostas chegam ao dashboard. Feito em TypeScript e em produção.",
-    "projects.p2":"Aplicativo de marketplace em TypeScript com listagens de produtos, fluxos de usuários e padrões reais de e-commerce.",
-    "projects.p3":"Contribuição para o Weavora, projeto open-source em TypeScript — leitura de código alheio e trabalho dentro de arquitetura existente.",
-    "projects.p4":"Sistema de gerenciamento de usuários e roteadores — lógica backend, papéis e roteamento. Demonstra arquitetura de sistemas e controle de acesso.",
-    "projects.p5":"Projeto Java no IUT cobrindo design orientado a objetos e padrões de backend em contexto acadêmico.",
-    "projects.p6":"Pong clássico do zero em C++ — loop do jogo, detecção de colisões, renderização — sem engine, só a linguagem.",
-    "skills.label":"Capacidades","skills.title":"Com que trabalho","skills.lang":"Linguagens","skills.tools":"Frameworks e ferramentas",
-    "about.label":"Trajetória","about.title":"Um pouco sobre mim",
-    "about.p1":"Sou Limassou — desenvolvedor no Bangladesh, estudando Ciência da Computação e Engenharia na <strong>IUT</strong>. Programo há alguns anos e o que me move é transformar ideias em coisas que realmente funcionam.",
-    "about.p2":"Meu trabalho abrange todo o stack: lancei um <strong>produto TypeScript em produção</strong> (LimaChat), construí sistemas backend em Java, escrevi lógica de jogo em C++ e programei Arduinos do zero.",
-    "about.p3":"Contribuí com <strong>28+ repositórios</strong> este ano, incluindo projetos em equipe e open-source. 92% da minha atividade é código.",
-    "about.p4":"Fora do código, me interesso por robótica, sistemas de IA e como o software interage com o mundo físico.",
-    "about.loc":"Localização","about.edu":"Educação","about.focus":"Foco","about.focusval":"Full-stack & Sistemas",
-    "about.project":"Projeto ao vivo","about.status":"Status","about.statusval":"Disponível",
-    "contact.h3":"Vamos conversar.","contact.p":"Estou procurando uma vaga de desenvolvedor intermediário. Se algo chamou sua atenção, entre em contato — respondo rápido.",
-    "footer":"Limassou Haman Bello · 2026 · Feito à mão"
-  }
-};
-
-let currentLang = 'en';
-
-function applyLang(lang) {
-  const dict = T[lang];
-  if (!dict) return;
-  currentLang = lang;
-
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key] !== undefined) el.innerHTML = dict[key];
-  });
-
-  // RTL for Arabic
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.lang = lang;
-
-  // Update button label
-  const codes = {en:'EN',fr:'FR',es:'ES',zh:'中',ru:'RU',ar:'AR',de:'DE',pt:'PT'};
-  document.getElementById('langCurrent').textContent = codes[lang] || lang.toUpperCase();
-
-  // Update active state
-  document.querySelectorAll('.lang-option').forEach(o => {
-    o.classList.toggle('active', o.dataset.lang === lang);
-  });
-}
-
-// Dropdown toggle
-const btn = document.getElementById('langBtn');
-const dropdown = document.getElementById('langDropdown');
-
-btn.addEventListener('click', e => {
-  e.stopPropagation();
-  const open = dropdown.classList.toggle('open');
-  btn.classList.toggle('open', open);
-});
-
-document.addEventListener('click', () => {
-  dropdown.classList.remove('open');
-  btn.classList.remove('open');
-});
-
-dropdown.addEventListener('click', e => {
-  const opt = e.target.closest('.lang-option');
-  if (opt) {
-    applyLang(opt.dataset.lang);
-    dropdown.classList.remove('open');
-    btn.classList.remove('open');
-  }
-});
-
-// Detect browser language on load
-const browserLang = navigator.language.slice(0,2);
-if (T[browserLang]) applyLang(browserLang);
-</script>
 </body>
 </html>
