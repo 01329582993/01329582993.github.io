@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Limassou Haman Bello</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -42,40 +43,77 @@ nav {
   border-bottom: 1px solid var(--line);
   padding: 0 max(2rem, calc(50vw - 420px));
 }
+
 .nav-row {
   display: flex; align-items: center; justify-content: space-between;
   height: 52px;
 }
+
 .nav-mark {
   font-family: 'Lora', serif;
   font-size: 15px;
   color: var(--ink);
   letter-spacing: 0.01em;
 }
+
 .nav-mark em { font-style: italic; color: var(--pop); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 .nav-links { display: flex; gap: 1.75rem; }
+
 .nav-links a {
   font-size: 13px; color: var(--ink3);
   letter-spacing: 0.04em;
   transition: color 0.15s;
 }
+
 .nav-links a:hover { color: var(--ink); }
+
+.lang-toggle {
+  border: 1px solid var(--line);
+  background: var(--paper2);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 6px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lang-toggle:hover {
+  border-color: var(--pop);
+  color: var(--pop);
+}
+
+.lang-muted {
+  color: var(--ink3);
+}
 
 /* ── WRAPPER ── */
 .wrap { max-width: 840px; margin: 0 auto; padding: 0 2rem; }
 
 /* ── HERO ── */
 .hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--line); }
+
 .hero-kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; font-family: var(--mono);
   color: var(--pop); letter-spacing: 0.08em;
   margin-bottom: 2rem;
 }
+
 .hero-kicker::before {
   content: ''; display: block;
   width: 28px; height: 1px; background: var(--pop);
 }
+
 h1 {
   font-family: 'Lora', serif;
   font-size: clamp(2.6rem, 5.5vw, 4.2rem);
@@ -85,10 +123,12 @@ h1 {
   margin-bottom: 1.5rem;
   color: var(--ink);
 }
+
 h1 em {
   font-style: italic;
   color: var(--pop);
 }
+
 .hero-sub {
   font-size: 17px;
   color: var(--ink2);
@@ -96,8 +136,11 @@ h1 em {
   line-height: 1.75;
   margin-bottom: 2.5rem;
 }
+
 .hero-sub strong { color: var(--ink); font-weight: 500; }
+
 .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 9px 20px; border-radius: 4px;
@@ -105,27 +148,35 @@ h1 em {
   letter-spacing: 0.02em;
   transition: all 0.15s; cursor: pointer;
 }
+
 .btn-solid {
   background: var(--ink); color: var(--paper);
   border: 1px solid var(--ink);
 }
+
 .btn-solid:hover { background: var(--ink2); border-color: var(--ink2); }
+
 .btn-line {
   background: transparent; color: var(--ink);
   border: 1px solid var(--line);
 }
+
 .btn-line:hover { border-color: var(--ink3); }
+
 .hero-counters {
   display: flex; gap: 3rem;
   margin-top: 4rem; padding-top: 3rem;
   border-top: 1px solid var(--line);
 }
+
 .counter-n {
   font-family: 'Lora', serif;
   font-size: 2rem; font-weight: 600;
   color: var(--ink); line-height: 1;
 }
+
 .counter-n sup { font-size: 1rem; color: var(--pop); }
+
 .counter-l {
   margin-top: 4px; font-size: 12px;
   font-family: var(--mono);
@@ -135,12 +186,15 @@ h1 em {
 
 /* ── SECTION HEADER ── */
 .sec { padding: 5rem 0; border-bottom: 1px solid var(--line); }
+
 .sec-head { margin-bottom: 3rem; }
+
 .sec-label {
   font-size: 11px; font-family: var(--mono);
   color: var(--ink3); letter-spacing: 0.1em;
   text-transform: uppercase; margin-bottom: 0.5rem;
 }
+
 h2 {
   font-family: 'Lora', serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -150,6 +204,7 @@ h2 {
 
 /* ── PROJECTS ── */
 .projects { display: flex; flex-direction: column; gap: 0; }
+
 .project {
   display: grid;
   grid-template-columns: 56px 1fr auto;
@@ -159,44 +214,55 @@ h2 {
   border-top: 1px solid var(--line);
   transition: background 0.15s;
 }
+
 .project:last-child { border-bottom: 1px solid var(--line); }
+
 .project:hover { background: var(--paper2); margin: 0 -1rem; padding: 1.5rem 1rem; }
+
 .proj-num {
   font-family: var(--mono);
   font-size: 11px; color: var(--ink3);
   padding-top: 3px; letter-spacing: 0.04em;
 }
-.proj-body {}
+
 .proj-name {
   font-size: 15px; font-weight: 600;
   color: var(--ink); margin-bottom: 4px;
   display: flex; align-items: center; gap: 8px;
 }
+
 .proj-fork {
   font-size: 10px; font-family: var(--mono);
   color: var(--ink3); padding: 1px 6px;
   border: 1px solid var(--line); border-radius: 3px;
   font-weight: 400;
 }
+
 .proj-desc {
   font-size: 13px; color: var(--ink2);
   line-height: 1.6; margin-bottom: 10px;
   max-width: 520px;
 }
+
 .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
 .proj-tag {
   font-size: 11px; font-family: var(--mono);
   color: var(--ink3); padding: 2px 7px;
   background: var(--paper2);
   border: 1px solid var(--line); border-radius: 3px;
 }
+
 .proj-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 2px; }
+
 .proj-link {
   font-size: 12px; color: var(--ink3);
   display: flex; align-items: center; gap: 4px;
   transition: color 0.15s;
 }
+
 .proj-link:hover { color: var(--pop); }
+
 .proj-live {
   font-size: 12px; color: var(--pop);
   font-weight: 500;
@@ -205,56 +271,73 @@ h2 {
 
 /* ── SKILLS ── */
 .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-@media(max-width:560px){ .skills-layout { grid-template-columns: 1fr; } }
+
 .skill-col h3 {
   font-size: 12px; font-family: var(--mono);
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink3); margin-bottom: 1rem;
   padding-bottom: 0.5rem; border-bottom: 1px solid var(--line);
 }
+
 .skill-row {
   display: flex; justify-content: space-between;
   align-items: center; padding: 6px 0;
   border-bottom: 1px solid var(--paper3);
   font-size: 14px;
 }
+
 .skill-row:last-child { border-bottom: none; }
+
 .skill-name { color: var(--ink2); }
+
 .skill-dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--pop); opacity: 0.4;
   flex-shrink: 0;
 }
+
 .skill-dot.hi { opacity: 1; }
 .skill-dot.md { opacity: 0.65; }
 
 /* ── ABOUT ── */
 .about-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
-@media(max-width:600px){ .about-layout { grid-template-columns: 1fr; gap: 2rem; } }
+
 .about-text p { color: var(--ink2); margin-bottom: 1rem; font-size: 15px; line-height: 1.8; }
+
 .about-text p:last-child { margin-bottom: 0; }
+
 .about-text strong { color: var(--ink); font-weight: 500; }
+
 .about-text a { color: var(--pop); border-bottom: 1px solid var(--pop-light); }
+
 .about-text a:hover { border-color: var(--pop); }
+
 .about-info { display: flex; flex-direction: column; gap: 0; }
+
 .info-row {
   display: flex; flex-direction: column;
   padding: 10px 0; border-bottom: 1px solid var(--line);
 }
+
 .info-row:first-child { border-top: 1px solid var(--line); }
+
 .info-k {
   font-size: 10px; font-family: var(--mono);
   color: var(--ink3); letter-spacing: 0.08em;
   text-transform: uppercase; margin-bottom: 2px;
 }
+
 .info-v { font-size: 13px; color: var(--ink); }
+
 .info-v a { color: var(--pop); }
+
 .status-dot {
   display: inline-block; width: 7px; height: 7px;
   border-radius: 50%; background: #2d9e6b;
   margin-right: 5px; vertical-align: middle;
   animation: blink 2s infinite;
 }
+
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
 
 /* ── CONTACT ── */
@@ -264,13 +347,17 @@ h2 {
   display: flex; align-items: center; justify-content: space-between;
   gap: 2rem; flex-wrap: wrap;
 }
+
 .contact-copy h3 {
   font-family: 'Lora', serif;
   font-size: 1.5rem; font-weight: 600;
   margin-bottom: 0.4rem; color: var(--paper);
 }
+
 .contact-copy p { font-size: 14px; color: #9a9590; max-width: 340px; }
+
 .contact-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; flex-shrink: 0; }
+
 .btn-inv {
   background: transparent; color: var(--paper);
   border: 1px solid rgba(255,255,255,0.2);
@@ -279,7 +366,9 @@ h2 {
   transition: border-color 0.15s; cursor: pointer;
   display: inline-flex; align-items: center; gap: 6px;
 }
+
 .btn-inv:hover { border-color: rgba(255,255,255,0.5); }
+
 .btn-inv-pop {
   background: var(--pop); color: #fff;
   border: 1px solid var(--pop);
@@ -288,6 +377,7 @@ h2 {
   transition: opacity 0.15s; cursor: pointer;
   display: inline-flex; align-items: center; gap: 6px;
 }
+
 .btn-inv-pop:hover { opacity: 0.88; }
 
 /* ── FOOTER ── */
@@ -297,25 +387,69 @@ footer {
   color: var(--ink3); letter-spacing: 0.04em;
 }
 
+/* ── MOBILE ── */
 @media(max-width:640px){
+  .nav-row {
+    height: auto;
+    padding: 12px 0;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
   .hero { padding: 4rem 0 3.5rem; }
-  .hero-counters { gap: 2rem; }
+
+  .hero-counters {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
   .project { grid-template-columns: 40px 1fr; }
+
   .proj-links { display: none; }
+
   .contact-block { flex-direction: column; padding: 2rem; }
+}
+
+@media(max-width:600px){
+  .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media(max-width:560px){
+  .skills-layout { grid-template-columns: 1fr; }
 }
 </style>
 </head>
+
 <body>
 
 <nav>
   <div class="nav-row">
     <span class="nav-mark">L. Haman <em>Bello</em></span>
-    <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span id="currentLang">EN</span>
+        <span class="lang-muted">/ FR</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -325,15 +459,19 @@ footer {
   <!-- HERO -->
   <div class="hero">
     <div class="hero-kicker">Open to work</div>
+
     <h1>Building software<br>that <em>actually works.</em></h1>
+
     <p class="hero-sub">
       I'm a <strong>junior developer and B.Sc. in CSE student (3rd year) at IUT Bangladesh</strong> with a passion for clean code, embedded systems, and building practical applications. I work with React, TypeScript, Java, Python, and C++.
     </p>
+
     <div class="cta-row">
       <a class="btn btn-solid" href="https://github.com/01329582993" target="_blank">GitHub &rarr;</a>
       <a class="btn btn-line" href="https://wa.me/8801329582993" target="_blank">WhatsApp</a>
       <a class="btn btn-line" href="#contact">Get in touch</a>
     </div>
+
     <div class="hero-counters">
       <div>
         <div class="counter-n">46<sup>+</sup></div>
@@ -524,6 +662,7 @@ footer {
       <div class="sec-label">Capabilities</div>
       <h2>What I work with</h2>
     </div>
+
     <div class="skills-layout">
       <div class="skill-col">
         <h3>Languages</h3>
@@ -533,6 +672,7 @@ footer {
         <div class="skill-row"><span class="skill-name">C / C++</span><span class="skill-dot md"></span></div>
         <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-dot hi"></span></div>
       </div>
+
       <div class="skill-col">
         <h3>Frameworks & tools</h3>
         <div class="skill-row"><span class="skill-name">React / Next.js</span><span class="skill-dot hi"></span></div>
@@ -550,6 +690,7 @@ footer {
       <div class="sec-label">Background</div>
       <h2>A bit about me</h2>
     </div>
+
     <div class="about-layout">
       <div class="about-text">
         <p>I'm Limassou — a junior developer based in Bangladesh, currently pursuing my B.Sc. in Computer Science and Engineering (3rd year) at <strong>IUT</strong>. I've been learning and writing code for a few years, motivated by building applications that solve real-world problems.</p>
@@ -557,6 +698,7 @@ footer {
         <p>I've contributed to <strong>28+ repositories</strong> this year, including team projects and open-source work, and I'm always looking to learn and improve my skills.</p>
         <p>Outside of code, I'm interested in robotics, AI systems, and how software interacts with the physical world. I have an <a href="https://orcid.org/0009-0008-6619-529X" target="_blank">ORCID profile</a> for academic work.</p>
       </div>
+
       <div class="about-info">
         <div class="info-row">
           <span class="info-k">Location</span>
@@ -593,6 +735,7 @@ footer {
         <h3>Let's talk.</h3>
         <p>I'm looking for a junior developer role or internship. If something I've built caught your eye, reach out — I reply fast.</p>
       </div>
+
       <div class="contact-btns">
         <a class="btn-inv-pop" href="https://github.com/01329582993" target="_blank">GitHub &rarr;</a>
         <a class="btn-inv" href="https://wa.me/8801329582993" target="_blank">WhatsApp</a>
@@ -605,6 +748,311 @@ footer {
 <footer>
   Limassou Haman Bello &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Built by hand
 </footer>
+
+<script>
+const translations = {
+  en: {
+    title: "Limassou Haman Bello",
+
+    nav: ["Projects", "Skills", "About", "Contact"],
+
+    heroKicker: "Open to work",
+    h1: "Building software<br>that <em>actually works.</em>",
+    heroSub: `I'm a <strong>junior developer and B.Sc. in CSE student (3rd year) at IUT Bangladesh</strong> with a passion for clean code, embedded systems, and building practical applications. I work with React, TypeScript, Java, Python, and C++.`,
+    cta: ["GitHub →", "WhatsApp", "Get in touch"],
+    counters: ["Repositories", "Contributions", "Languages", "Years building"],
+
+    secLabels: ["Selected work", "Capabilities", "Background"],
+    secTitles: ["Things I've built", "What I work with", "A bit about me"],
+
+    code: "Code",
+
+    projects: [
+      {
+        name: "LimaChat",
+        desc: "An AI-powered conversational form builder. Users answer questions in a chat interface, and responses land in an admin dashboard. Built with Next.js, Prisma, and PostgreSQL.",
+        tags: ["TypeScript", "Next.js", "Prisma", "AI"]
+      },
+      {
+        name: "UgraMarket",
+        desc: "An agricultural marketplace application designed for onion growers and farmers to manage storage, calculate post-harvest investments/profits, and trade products. Deployed and available on GitHub.",
+        tags: ["TypeScript", "Agriculture", "Web app"]
+      },
+      {
+        name: "Weavora",
+        fork: "fork",
+        desc: "An AI-enhanced academic ecosystem developed for classroom management, course-specific AI tutoring (RAG), automated grading, and real-time chat. Built as a team project for CSE 4510.",
+        tags: ["React", "Node.js", "Firebase", "GenAI"]
+      },
+      {
+        name: "IUSERS Internet Manager",
+        desc: "An autonomous internet orchestration system that automates account rotation, schedules router access, and polls usage data using Playwright scraping. Built with FastAPI and React.",
+        tags: ["FastAPI", "React", "Playwright", "Automation"]
+      },
+      {
+        name: "RoomSync",
+        desc: "A university housing optimization platform that matches roommates using a lifestyle compatibility scoring engine based on shared habits and deal breakers. Built with React Native, Node.js, and PostgreSQL.",
+        tags: ["React Native", "Node.js", "PostgreSQL", "Algorithms"]
+      },
+      {
+        name: "Trading Journal App",
+        desc: "A real-time mobile trading journal designed to track daily trade execution, calculate performance metrics, and store log data. Built with React Native (Expo) and Supabase.",
+        tags: ["React Native", "Expo", "Supabase", "Mobile"]
+      },
+      {
+        name: "Space Mission Management System",
+        desc: "A relational database project designed to manage and track space missions, spacecraft, astronaut profiles, scientific experiments, launches, and telemetry data. Developed for CSE 4508.",
+        tags: ["RDBMS", "SQL", "Database Design"]
+      },
+      {
+        name: "Gym Management System",
+        desc: "A RESTful backend API for gym user membership management, trainer scheduling, and workout plans. Developed for CSE 4540 Web Programming Lab.",
+        tags: ["Node.js", "Express", "MongoDB"]
+      },
+      {
+        name: "NearAlert",
+        desc: "An interactive V2X (Vehicle-to-Everything) collision simulation showing real-time city vehicle communication, warning trigger latency, and Time-to-Collision (TTC) calculations.",
+        tags: ["HTML5 Canvas", "JavaScript", "Simulation"]
+      }
+    ],
+
+    skillHeaders: ["Languages", "Frameworks & tools"],
+
+    skills: [
+      "TypeScript / JavaScript",
+      "Python",
+      "Java",
+      "C / C++",
+      "HTML / CSS",
+      "React / Next.js",
+      "Node.js",
+      "Git / GitHub",
+      "Arduino / Embedded",
+      "Vercel / Deployment"
+    ],
+
+    about: [
+      `I'm Limassou — a junior developer based in Bangladesh, currently pursuing my B.Sc. in Computer Science and Engineering (3rd year) at <strong>IUT</strong>. I've been learning and writing code for a few years, motivated by building applications that solve real-world problems.`,
+      `My academic and personal projects span various areas: I've built a TypeScript form builder (LimaChat), designed backend systems in Java, written game logic in C++, and programmed embedded Arduino devices. I enjoy working across different parts of the stack.`,
+      `I've contributed to <strong>28+ repositories</strong> this year, including team projects and open-source work, and I'm always looking to learn and improve my skills.`,
+      `Outside of code, I'm interested in robotics, AI systems, and how software interacts with the physical world. I have an <a href="https://orcid.org/0009-0008-6619-529X" target="_blank">ORCID profile</a> for academic work.`
+    ],
+
+    infoKeys: ["Location", "Education", "Focus", "GitHub", "WhatsApp", "Status"],
+
+    infoValues: [
+      "Bangladesh",
+      "B.Sc. in CSE (3rd year), IUT",
+      "Full-stack & Systems",
+      `<a href="https://github.com/01329582993" target="_blank">01329582993</a>`,
+      `<a href="https://wa.me/8801329582993" target="_blank">+8801329582993</a>`,
+      `<span class="status-dot"></span>Open to work`
+    ],
+
+    contactTitle: "Let's talk.",
+    contactText: "I'm looking for a junior developer role or internship. If something I've built caught your eye, reach out — I reply fast.",
+    contactButtons: ["GitHub →", "WhatsApp"],
+
+    footer: "Limassou Haman Bello &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Built by hand"
+  },
+
+  fr: {
+    title: "Limassou Haman Bello",
+
+    nav: ["Projets", "Compétences", "À propos", "Contact"],
+
+    heroKicker: "Disponible pour travailler",
+    h1: "Je construis des logiciels<br>qui <em>fonctionnent vraiment.</em>",
+    heroSub: `Je suis un <strong>développeur junior et étudiant en B.Sc. CSE, 3e année, à l'IUT Bangladesh</strong>, passionné par le code propre, les systèmes embarqués et les applications pratiques. Je travaille avec React, TypeScript, Java, Python et C++.`,
+    cta: ["GitHub →", "WhatsApp", "Me contacter"],
+    counters: ["Repositories", "Contributions", "Langages", "Années de pratique"],
+
+    secLabels: ["Travaux sélectionnés", "Capacités", "Parcours"],
+    secTitles: ["Ce que j'ai construit", "Mes outils de travail", "Un peu sur moi"],
+
+    code: "Code",
+
+    projects: [
+      {
+        name: "LimaChat",
+        desc: "Un générateur de formulaires conversationnels assisté par IA. Les utilisateurs répondent dans une interface de chat, puis les réponses arrivent dans un tableau de bord administrateur. Construit avec Next.js, Prisma et PostgreSQL.",
+        tags: ["TypeScript", "Next.js", "Prisma", "IA"]
+      },
+      {
+        name: "UgraMarket",
+        desc: "Une application de marketplace agricole conçue pour aider les cultivateurs d'oignons et les agriculteurs à gérer le stockage, calculer les investissements et profits post-récolte, et vendre leurs produits.",
+        tags: ["TypeScript", "Agriculture", "Application web"]
+      },
+      {
+        name: "Weavora",
+        fork: "fork",
+        desc: "Un écosystème académique amélioré par l'IA pour la gestion de classe, le tutorat IA par cours, la correction automatique et le chat en temps réel. Projet d'équipe pour CSE 4510.",
+        tags: ["React", "Node.js", "Firebase", "GenAI"]
+      },
+      {
+        name: "IUSERS Internet Manager",
+        desc: "Un système autonome d'orchestration internet qui automatise la rotation des comptes, planifie l'accès au routeur et récupère les données d'utilisation avec Playwright. Construit avec FastAPI et React.",
+        tags: ["FastAPI", "React", "Playwright", "Automatisation"]
+      },
+      {
+        name: "RoomSync",
+        desc: "Une plateforme d'optimisation du logement universitaire qui associe les colocataires grâce à un moteur de compatibilité basé sur les habitudes et les limites personnelles.",
+        tags: ["React Native", "Node.js", "PostgreSQL", "Algorithmes"]
+      },
+      {
+        name: "Trading Journal App",
+        desc: "Un journal de trading mobile en temps réel conçu pour suivre l'exécution quotidienne des trades, calculer les performances et sauvegarder les données. Construit avec React Native (Expo) et Supabase.",
+        tags: ["React Native", "Expo", "Supabase", "Mobile"]
+      },
+      {
+        name: "Space Mission Management System",
+        desc: "Un projet de base de données relationnelle pour gérer les missions spatiales, les vaisseaux, les astronautes, les expériences scientifiques, les lancements et la télémétrie. Développé pour CSE 4508.",
+        tags: ["RDBMS", "SQL", "Conception DB"]
+      },
+      {
+        name: "Gym Management System",
+        desc: "Une API backend RESTful pour gérer les abonnements d'une salle de sport, les emplois du temps des coachs et les plans d'entraînement. Développé pour CSE 4540 Web Programming Lab.",
+        tags: ["Node.js", "Express", "MongoDB"]
+      },
+      {
+        name: "NearAlert",
+        desc: "Une simulation interactive V2X montrant la communication entre véhicules, la latence des alertes et les calculs de Time-to-Collision, ou TTC.",
+        tags: ["HTML5 Canvas", "JavaScript", "Simulation"]
+      }
+    ],
+
+    skillHeaders: ["Langages", "Frameworks & outils"],
+
+    skills: [
+      "TypeScript / JavaScript",
+      "Python",
+      "Java",
+      "C / C++",
+      "HTML / CSS",
+      "React / Next.js",
+      "Node.js",
+      "Git / GitHub",
+      "Arduino / Embarqué",
+      "Vercel / Déploiement"
+    ],
+
+    about: [
+      `Je suis Limassou — un développeur junior basé au Bangladesh, actuellement étudiant en Computer Science and Engineering, 3e année, à <strong>l'IUT</strong>. J'apprends et j'écris du code depuis quelques années, avec l'objectif de créer des applications utiles dans le monde réel.`,
+      `Mes projets académiques et personnels couvrent plusieurs domaines : j'ai construit un générateur de formulaires en TypeScript, conçu des systèmes backend en Java, écrit de la logique de jeu en C++ et programmé des appareils Arduino embarqués. J'aime travailler sur différentes parties de la stack.`,
+      `J'ai contribué à <strong>28+ repositories</strong> cette année, y compris des projets d'équipe et du travail open-source, et je cherche toujours à apprendre et à améliorer mes compétences.`,
+      `En dehors du code, je m'intéresse à la robotique, aux systèmes d'IA et à l'interaction entre logiciel et monde physique. J'ai aussi un <a href="https://orcid.org/0009-0008-6619-529X" target="_blank">profil ORCID</a> pour mes travaux académiques.`
+    ],
+
+    infoKeys: ["Localisation", "Éducation", "Focus", "GitHub", "WhatsApp", "Statut"],
+
+    infoValues: [
+      "Bangladesh",
+      "B.Sc. en CSE, 3e année, IUT",
+      "Full-stack & systèmes",
+      `<a href="https://github.com/01329582993" target="_blank">01329582993</a>`,
+      `<a href="https://wa.me/8801329582993" target="_blank">+8801329582993</a>`,
+      `<span class="status-dot"></span>Disponible`
+    ],
+
+    contactTitle: "Discutons.",
+    contactText: "Je recherche un poste de développeur junior ou un stage. Si l'un de mes projets vous intéresse, contactez-moi — je réponds rapidement.",
+    contactButtons: ["GitHub →", "WhatsApp"],
+
+    footer: "Limassou Haman Bello &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Fait à la main"
+  }
+};
+
+function setLanguage(lang) {
+  const t = translations[lang];
+
+  document.documentElement.lang = lang;
+  document.title = t.title;
+  localStorage.setItem("siteLanguage", lang);
+
+  const currentLang = document.getElementById("currentLang");
+  currentLang.textContent = lang.toUpperCase();
+
+  const langToggle = document.getElementById("langToggle");
+  langToggle.setAttribute(
+    "aria-label",
+    lang === "en" ? "Switch to French" : "Passer en anglais"
+  );
+
+  document.querySelectorAll(".nav-links a").forEach((item, i) => {
+    item.textContent = t.nav[i];
+  });
+
+  document.querySelector(".hero-kicker").textContent = t.heroKicker;
+  document.querySelector("h1").innerHTML = t.h1;
+  document.querySelector(".hero-sub").innerHTML = t.heroSub;
+
+  document.querySelectorAll(".cta-row a").forEach((item, i) => {
+    item.textContent = t.cta[i];
+  });
+
+  document.querySelectorAll(".counter-l").forEach((item, i) => {
+    item.textContent = t.counters[i];
+  });
+
+  document.querySelectorAll(".sec-label").forEach((item, i) => {
+    item.textContent = t.secLabels[i];
+  });
+
+  document.querySelectorAll(".sec-head h2").forEach((item, i) => {
+    item.textContent = t.secTitles[i];
+  });
+
+  document.querySelectorAll(".project").forEach((project, i) => {
+    const p = t.projects[i];
+
+    const name = project.querySelector(".proj-name");
+    name.innerHTML = p.name + (p.fork ? ` <span class="proj-fork">${p.fork}</span>` : "");
+
+    project.querySelector(".proj-desc").textContent = p.desc;
+
+    project.querySelectorAll(".proj-tag").forEach((tag, j) => {
+      tag.textContent = p.tags[j];
+    });
+
+    const link = project.querySelector(".proj-link");
+    if (link) link.textContent = t.code;
+  });
+
+  document.querySelectorAll(".skill-col h3").forEach((item, i) => {
+    item.textContent = t.skillHeaders[i];
+  });
+
+  document.querySelectorAll(".skill-name").forEach((item, i) => {
+    item.textContent = t.skills[i];
+  });
+
+  document.querySelectorAll(".about-text p").forEach((item, i) => {
+    item.innerHTML = t.about[i];
+  });
+
+  document.querySelectorAll(".info-row").forEach((row, i) => {
+    row.querySelector(".info-k").textContent = t.infoKeys[i];
+    row.querySelector(".info-v").innerHTML = t.infoValues[i];
+  });
+
+  document.querySelector(".contact-copy h3").textContent = t.contactTitle;
+  document.querySelector(".contact-copy p").textContent = t.contactText;
+
+  document.querySelectorAll(".contact-btns a").forEach((item, i) => {
+    item.textContent = t.contactButtons[i];
+  });
+
+  document.querySelector("footer").innerHTML = t.footer;
+}
+
+const savedLanguage = localStorage.getItem("siteLanguage") || "en";
+setLanguage(savedLanguage);
+
+document.getElementById("langToggle").addEventListener("click", () => {
+  const current = localStorage.getItem("siteLanguage") || "en";
+  setLanguage(current === "en" ? "fr" : "en");
+});
+</script>
 
 </body>
 </html>
